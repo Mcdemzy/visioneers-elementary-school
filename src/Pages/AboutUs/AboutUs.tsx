@@ -1,3 +1,5 @@
+import { Send } from "lucide-react";
+
 export default function AboutUs() {
   return (
     <section>
@@ -11,11 +13,11 @@ export default function AboutUs() {
         </p>
         <div className="flex justify-start items-center gap-x-[72px] h-[436px] m-auto w-[90%] mt-20">
           <div className="space-y-[40px] w-[50%] h-[436px]">
-            <h2 className="text-[42px] leading-[38.73px] font-Inter font-bold text-[#0C1E34]">
-              Kasmoz Private School
+            <h2 className="text-[42px] leading-[38.73px] font-Inter font-bold text-primary">
+              Visioneers Elementary School
             </h2>
             <p className="text-[16px] text-[#333333] font-Inter leading-[19.36px]">
-              Kasmoz Private School (KPS), is a prestigious Nigerian secondary
+              Visioneers Elementary School, is a prestigious Nigerian secondary
               school offering an exceptional educational experience since 2010.
               With a focus on academic excellence and character development, we
               nurture young minds to reach their full potential. Our holistic
@@ -107,11 +109,11 @@ export default function AboutUs() {
         </h1>
         <div className="flex justify-start items-center gap-x-[72px] h-[436px] m-auto w-[90%] mt-20">
           <div className="space-y-[40px] w-[50%] h-[436px]">
-            <h2 className="text-[42px] leading-[38.73px] font-Inter font-bold text-[#0C1E34]">
-              Kasmoz Private School
+            <h2 className="text-[42px] leading-[38.73px] font-Inter font-bold text-primary">
+              Visioneers Elementary School
             </h2>
             <p className="text-[16px] text-[#333333] font-Inter leading-[19.36px]">
-              Kasmoz Private School (KPS), is a prestigious Nigerian secondary
+              Visioneers Elementary School, is a prestigious Nigerian secondary
               school offering an exceptional educational experience since 2010.
               With a focus on academic excellence and character development, we
               nurture young minds to reach their full potential. Our holistic
@@ -147,8 +149,8 @@ export default function AboutUs() {
           Aim & <p className="text-primary">Objectives</p>
         </h1>
         <p className="text-[16px] text-center w-[800px] m-auto text-[#333333] my-12">
-          Kasmoz Private School is dedicated to nurturing every aspect of a
-          child's development in a complex and challenging world. A child's
+          Visioneers Elementary School is dedicated to nurturing every aspect of
+          a child's development in a complex and challenging world. A child's
           early education significantly shapes their life journey. We harness
           all available resources to provide a distinctive experience for every
           student at Kasmoz. Our approach focuses on understanding each child's
@@ -186,7 +188,44 @@ export default function AboutUs() {
       </div>
 
       {/* news letters */}
-      <div className="mt-20 block w-[90%] border h-[390px] m-auto"></div>
+      <div
+        style={{ backgroundImage: "url(/images/newsletter.png)" }}
+        className="flex justify-center items-center shadow-md rounded-md mt-20 w-[90%] h-[390px] m-auto"
+      >
+        <div className=" space-y-[40px] w-[60%] h-[117px] m-auto">
+          <p className="text-[24px] font-Inter text-center font-[700]">
+            JOIN OUR <strong className="text-primary">NEWSLETTER</strong> TO GET
+            MORE <strong className="text-primary">INFORMATION</strong> ABOUT US
+          </p>
+          <form className="space-y-[40px]" action="#">
+            <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+              <div className="relative w-full">
+                <label
+                  htmlFor="email"
+                  className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  Email address
+                </label>
+                <input
+                  className="block p-3 w-full  text-base text-gray-900 bg-gray-50 rounded-lg border-y-2 border-l-2 border-[#57007B] sm:rounded-none sm:rounded-l-lg focus:ring-primary focus:border-primary-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary"
+                  placeholder="Enter your E-mail to receive our news letter"
+                  type="email"
+                  id="email"
+                  required
+                />
+              </div>
+              <div>
+                <button
+                  type="submit"
+                  className="bg-[#57007B] py-3.5 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                >
+                  <Send />
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
       <footer className="h-[421px] w-full border mt-20"></footer>
     </section>
   );
