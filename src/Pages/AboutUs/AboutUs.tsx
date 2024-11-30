@@ -1,4 +1,12 @@
-import { Send } from "lucide-react";
+import {
+  Compass,
+  Facebook,
+  Instagram,
+  Mail,
+  Phone,
+  Send,
+  Twitter,
+} from "lucide-react";
 
 export default function AboutUs() {
   return (
@@ -202,12 +210,12 @@ export default function AboutUs() {
               <div className="relative w-full">
                 <label
                   htmlFor="email"
-                  className="hidden mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  className="hidden mb-2 text-sm font-medium text-[#6B6B6B] text-[20px] font-Inter dark:text-gray-300"
                 >
                   Email address
                 </label>
                 <input
-                  className="block p-3 w-full  text-base text-gray-900 bg-gray-50 rounded-lg border-y-2 border-l-2 border-[#57007B] sm:rounded-none sm:rounded-l-lg focus:ring-primary focus:border-primary-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary"
+                  className="block p-3 w-full  text-base text-black  font-Inter bg-gray-50 rounded-lg border-y-2 border-l-2 border-[#57007B] sm:rounded-none sm:rounded-l-lg focus:ring-primary focus:border-primary-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary"
                   placeholder="Enter your E-mail to receive our news letter"
                   type="email"
                   id="email"
@@ -226,7 +234,121 @@ export default function AboutUs() {
           </form>
         </div>
       </div>
-      <footer className="h-[421px] w-full border mt-20"></footer>
+      <footer className="px-[80px] pt-[20px] w-full border mt-20 bg-[#FCF3FF]">
+        <div className="space-y-[200px] mx-auto w-full  p-4 py-6 lg:py-8">
+          <div className="space-y-10 md:flex md:justify-start gap-x-[150px]">
+            <div className=" mb-6 md:mb-0">
+              <a href="#" className="w-[280px] flex flex-col gap-y-[24px]">
+                <img
+                  src="/images/logo.png"
+                  className="w-[90.25px] h-[118px] me-3"
+                  alt="FlowBite Logo"
+                />
+                <p className="text-[12px] font-Inter font-[500] leading-[14.52px] text-[#6B6B6B]">
+                  Visioneers Elementary School is dedicated to nurturing every
+                  aspect of a child's development in a complex and challenging
+                  world. We harness all available resources to provide a
+                  distinctive experience for every student at Visioneers.
+                </p>
+              </a>
+            </div>
+            <div className="w-full grid grid-cols-2 gap-8 sm:gap-6 sm:flex sm:flex-row sm:justify-between gap-x-[150px] flex-wrap">
+              <div className="">
+                <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
+                  Links
+                </h2>
+                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Home
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      About Us
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Academics
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Admission
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Our Staffs
+                    </a>
+                  </li>
+                  <li className="mb-4">
+                    <a href="#" className="hover:underline">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div className="">
+                <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
+                  Contact Us
+                </h2>
+                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
+                    <Compass color="#6B6B6B" />
+                    <a href="#" className="hover:underline ">
+                      visioneerselementaryschool.com
+                    </a>
+                  </li>
+                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
+                    <Mail color="#6B6B6B" />
+                    <a href="#" className="hover:underline ">
+                      visioneersschool@gmail.com
+                    </a>
+                  </li>
+                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
+                    <Phone color="#6B6B6B" />
+                    <div className="flex flex-col ">
+                      <a href="#" className="hover:underline ">
+                        +234 814 3036019
+                      </a>
+                      <a href="#" className="hover:underline ">
+                        +234 814 3036019
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="">
+                <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
+                  Social Contact
+                </h2>
+                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
+                    <Facebook color="#6B6B6B" />
+                    <a href="#" className="hover:underline ">
+                      Facebook
+                    </a>
+                  </li>
+                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
+                    <Twitter color="#6B6B6B" />
+                    <a href="#" className="hover:underline ">
+                      Twitter
+                    </a>
+                  </li>
+                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
+                    <Instagram color="#6B6B6B" />
+                    <a href="#" className="hover:underline ">
+                      Instagram
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </section>
   );
 }
