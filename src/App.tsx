@@ -1,8 +1,15 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LandingPage from "./Pages/LandingPage";
+import AboutUs from "./Pages/AboutUs/AboutUs";
+
 const App = () => {
   return (
-    <div className="flex justify-center  bg-gray-300 items-center h-screen text-cyan-950 text-5xl font-black">
-      VISIONEERS ELEMENTARY SCHOOL
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about-us" element={<AboutUs />} />
+      </Routes>
+    </Router>
   );
 };
 
