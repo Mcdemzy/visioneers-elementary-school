@@ -19,12 +19,12 @@ export default function AboutUs() {
         <p className="text-center font-[500] font-Inter leading-[19.36px]text-[16px] text-[#333333]">
           Learn more about our school.
         </p>
-        <div className="flex justify-start items-center gap-x-[72px] h-[436px] m-auto w-[90%] mt-20">
-          <div className="space-y-[40px] w-[50%] h-[436px]">
-            <h2 className="text-[42px] leading-[38.73px] font-Inter font-bold text-primary">
+        <div className="flex flex-col-reverse gap-y-10 lg:flex-row justify-start items-center gap-x-[72px] m-auto w-[90%] mt-10 md:mt-20">
+          <div className="space-y-[40px] w-full lg:w-[50%]">
+            <h2 className="text-[32px] leading-10 md:text-[42px] md:leading-[38.73px] font-Inter font-bold text-primary">
               Visioneers Elementary School
             </h2>
-            <p className="text-[16px] text-[#333333] font-Inter leading-[19.36px]">
+            <p className="text-sm md:text-[16px] text-[#333333] font-Inter leading-[19.36px]">
               Visioneers Elementary School, is a prestigious Nigerian secondary
               school offering an exceptional educational experience since 2010.
               With a focus on academic excellence and character development, we
@@ -46,9 +46,9 @@ export default function AboutUs() {
               Contact Us
             </button>
           </div>
-          <div className="flex justify-center items-center w-[50%] h-[436px]">
+          <div className="flex justify-center items-center w-full lg:w-[50%]">
             <img
-              className="w-[520.93px] h-[290px] rounded-lg"
+              className="w-full lg:w-[520.93px] h-[290px] rounded-lg"
               src="/images/about.png"
               alt="about"
             />
@@ -56,20 +56,20 @@ export default function AboutUs() {
         </div>
       </main>
       {/* our vision */}
-      <div className="mt-12 w-full">
+      <div className="mt-20 md:mt-12 w-full">
         <h1 className="flex gap-x-1.5 justify-center items-center font-Inter text-[34px] font-bold leading-[29.05px]">
           Our <p className="text-primary">Vision</p>
         </h1>
-        <div className="flex justify-start items-center gap-x-[48px] h-[456px] m-auto w-[90%] mt-20">
-          <div className="w-[55%] h-[436px]">
+        <div className="flex flex-col gap-y-10 lg:flex-row justify-start items-center gap-x-[48px] m-auto w-[90%] mt-20">
+          <div className="w-full lg:w-[55%]">
             <img
-              className="w-[751.4px] h-[420px] rounded-lg"
+              className="w-full md:w-[751.4px] h-[300px] md:h-[420px] rounded-lg"
               src="/images/vision.png"
               alt="about"
             />
           </div>
-          <div className="w-[35%] h-[436px]">
-            <ul className="text-[#333333] space-y-[10px] list-disc font-[300] text-[16px] leading-[19.36px]">
+          <div className="w-full px-6 md:px-0 lg:w-[35%]">
+            <ul className="text-[#333333] space-y-[10px] list-disc font-[300] text-sm md:text-[16px] leading-[19.36px]">
               <li>
                 To uphold an exceptional and innovative approach to education
                 that consistently aligns with the highest international
@@ -111,16 +111,16 @@ export default function AboutUs() {
         </div>
       </div>
       {/* directors message */}
-      <div className="mt-20 w-full">
-        <h1 className="flex gap-x-1.5 justify-center items-center font-Inter text-[34px] font-bold leading-[29.05px]">
+      <div className="mt-10 md:mt-20 w-full">
+        <h1 className="text-[24px] flex gap-x-1.5 justify-center items-center font-Inter md:text-[34px] font-bold leading-[29.05px]">
           Director's <p className="text-primary">Message</p>
         </h1>
-        <div className="flex justify-start items-center gap-x-[72px] h-[436px] m-auto w-[90%] mt-20">
-          <div className="space-y-[40px] w-[50%] h-[436px]">
-            <h2 className="text-[42px] leading-[38.73px] font-Inter font-bold text-primary">
+        <div className="flex flex-col-reverse gap-y-10 lg:flex-row justify-start items-center gap-x-[72px] m-auto w-[90%] mt-10 md:mt-20">
+          <div className="space-y-[40px] w-full lg:w-[50%]">
+            <h2 className="text-[32px] md:text-[42px] leading-[38.73px] font-Inter font-bold text-primary">
               Visioneers Elementary School
             </h2>
-            <p className="text-[16px] text-[#333333] font-Inter leading-[19.36px]">
+            <p className="text-sm md:text-[16px] text-[#333333] font-Inter leading-[19.36px]">
               Visioneers Elementary School, is a prestigious Nigerian secondary
               school offering an exceptional educational experience since 2010.
               With a focus on academic excellence and character development, we
@@ -138,13 +138,13 @@ export default function AboutUs() {
               family for an exciting educational journey filled with growth and
               endless possibilities.
             </p>
-            <p className="text-[#0C1E34] text-[24px] italic font-bold">
+            <p className="text-[#0C1E34] text-[20px] md:text-[24px] italic font-bold">
               ~ Prof K.A Adeyemo
             </p>
           </div>
-          <div className="flex justify-center items-center w-[50%] h-[436px]">
+          <div className="flex justify-center items-center  w-full lg:w-[50%]">
             <img
-              className="w-[520.93px] h-[290px] rounded-lg"
+              className=" w-full lg:w-[520.93px] h-[290px] rounded-lg"
               src="/images/about.png"
               alt="about"
             />
@@ -152,11 +152,11 @@ export default function AboutUs() {
         </div>
       </div>
       {/* aim & objectives */}
-      <div className="mt-20  w-full">
-        <h1 className="flex gap-x-1.5 justify-center items-center font-Inter text-[34px] font-bold leading-[29.05px]">
+      <div className="mt-10 md:mt-20  w-full">
+        <h1 className="flex gap-x-1.5 justify-center items-center font-Inter text-[24px] md:text-[34px] font-bold leading-[29.05px]">
           Aim & <p className="text-primary">Objectives</p>
         </h1>
-        <p className="text-[16px] text-center w-[800px] m-auto text-[#333333] my-12">
+        <p className="text-sm md:text-[16px] text-center w-[90%] md:w-[800px] m-auto text-[#333333] my-4 md:my-12">
           Visioneers Elementary School is dedicated to nurturing every aspect of
           a child's development in a complex and challenging world. A child's
           early education significantly shapes their life journey. We harness
@@ -169,11 +169,11 @@ export default function AboutUs() {
           style={{ backgroundImage: "url(/images/anthem.png)" }}
           className="flex justify-center items-center rounded-md w-[90%] m-auto h-[780px]"
         >
-          <div className="text-center w-[510px] h-[558px] m-auto">
-            <h2 className="font-Inter font-bold text-white text-[40px]">
+          <div className="text-center w-[510px] h-fit md:h-[558px] m-auto">
+            <h2 className="font-Inter font-bold text-white text-[30px] md:text-[40px]">
               School Anthem
             </h2>
-            <p className=" mt-5 text-[24px] font-[300] leading-[40px] font-Inter text-white">
+            <p className="mt-5 text-base md:text-[24px] font-[300] leading-[40px] font-Inter text-white">
               Great Kasmoz, Great Kasmoz, <br />
               Oyo state's most beautiful school <br />
               We are the leaders of tomorrow,
@@ -198,15 +198,15 @@ export default function AboutUs() {
       {/* news letters */}
       <div
         style={{ backgroundImage: "url(/images/newsletter.png)" }}
-        className="flex justify-center items-center shadow-md rounded-md mt-20 w-[90%] h-[390px] m-auto"
+        className="flex justify-center items-center shadow-md rounded-md mt-20 w-[90%] h-[300px] md:h-[390px] m-auto"
       >
-        <div className=" space-y-[40px] w-[60%] h-[117px] m-auto">
-          <p className="text-[24px] font-Inter text-center font-[700]">
+        <div className=" space-y-[40px] w-[90%] md:w-[60%] h-[117px] m-auto">
+          <p className="text-base md:text-[24px] font-Inter text-center font-[700]">
             JOIN OUR <strong className="text-primary">NEWSLETTER</strong> TO GET
             MORE <strong className="text-primary">INFORMATION</strong> ABOUT US
           </p>
-          <form className="space-y-[40px]" action="#">
-            <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
+          <form className="w-full  md:space-y-[40px]" action="#">
+            <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm flex justify-start sm:space-y-0">
               <div className="relative w-full">
                 <label
                   htmlFor="email"
@@ -215,7 +215,7 @@ export default function AboutUs() {
                   Email address
                 </label>
                 <input
-                  className="block p-3 w-full  text-base text-black  font-Inter bg-gray-50 rounded-lg border-y-2 border-l-2 border-[#57007B] sm:rounded-none sm:rounded-l-lg focus:ring-primary focus:border-primary-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary"
+                  className="block p-3 w-full text-sm md:text-base text-black  font-Inter bg-gray-50 rounded-lg border-y-2 border-l-2 border-[#57007B] sm:rounded-none sm:rounded-l-lg focus:ring-primary focus:border-primary-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary"
                   placeholder="Enter your E-mail to receive our news letter"
                   type="email"
                   id="email"
@@ -225,7 +225,7 @@ export default function AboutUs() {
               <div>
                 <button
                   type="submit"
-                  className="bg-[#57007B] py-3.5 px-5 w-full text-sm font-medium text-center text-white rounded-lg border cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                  className="-mt-4 md:-mt-0 bg-[#57007B]  py-3 md:py-3.5 px-5 w-full text-sm font-medium text-center text-white rounded-lg border-y cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                 >
                   <Send />
                 </button>
@@ -234,9 +234,9 @@ export default function AboutUs() {
           </form>
         </div>
       </div>
-      <footer className="px-[80px] pt-[20px] w-full border mt-20 bg-[#FCF3FF]">
+      <footer className="px-4 md:px-[80px] pt-[20px] w-full border mt-20 bg-[#FCF3FF]">
         <div className="space-y-[200px] mx-auto w-full  p-4 py-6 lg:py-8">
-          <div className="space-y-10 md:flex md:justify-start gap-x-[150px]">
+          <div className="space-y-10 md:flex md:justify-start gap-x-[50px] md:gap-x-[150px]">
             <div className=" mb-6 md:mb-0">
               <a href="#" className="w-[280px] flex flex-col gap-y-[24px]">
                 <img
@@ -252,12 +252,12 @@ export default function AboutUs() {
                 </p>
               </a>
             </div>
-            <div className="w-full grid grid-cols-2 gap-8 sm:gap-6 sm:flex sm:flex-row sm:justify-between gap-x-[150px] flex-wrap">
+            <div className="w-full  grid-cols-2 gap-8 sm:gap-6 flex flex-row justify-between gap-x-[8px] md:gap-x-[150px] flex-wrap">
               <div className="">
                 <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
                   Links
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
                       Home
@@ -294,7 +294,7 @@ export default function AboutUs() {
                 <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
                   Contact Us
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4 flex gap-x-[10px] justify-start items-center">
                     <Compass color="#6B6B6B" />
                     <a href="#" className="hover:underline ">
@@ -324,7 +324,7 @@ export default function AboutUs() {
                 <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
                   Social Contact
                 </h2>
-                <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium">
                   <li className="mb-4 flex gap-x-[10px] justify-start items-center">
                     <Facebook color="#6B6B6B" />
                     <a href="#" className="hover:underline ">
