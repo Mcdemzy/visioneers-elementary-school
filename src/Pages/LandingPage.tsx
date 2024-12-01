@@ -1,7 +1,15 @@
+import FeaturesSection from "./Shared/FeaturesSection";
+import Footer from "./Shared/Footer";
+import HeroSection from "./Shared/HeroSection";
+import Navbar from "./Shared/Navbar";
+
 export default function LandingPage() {
   return (
-    <div className="flex justify-center  bg-gray-300 items-center h-screen text-cyan-950 text-5xl font-black">
-      VISIONEERS ELEMENTARY SCHOOL
+    <div className="bg-[#FFFFFF]">
+      <Navbar />
+      <HeroSection />
+      <FeaturesSection />
+      <Footer />
     </div>
   );
 }
