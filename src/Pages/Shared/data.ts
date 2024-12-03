@@ -1,9 +1,19 @@
-import bookIcon from "./icons/bookIcon.svg";
-import socialIcon from "./icons/socialIcon.svg";
-import leaderboardIcon from "./icons/leaderboardIcon.svg";
-import bookClose from "./icons/bookClose.svg";
-import sportIcon from "./icons/sportIcon.svg";
-import careerIcon from "./icons/careerIcon.svg";
+import {
+  bookIcon,
+  socialIcon,
+  leaderboardIcon,
+  bookClose,
+  sportIcon,
+  careerIcon,
+  graduationCap,
+  robot,
+  profile,
+  telescope,
+  chart,
+  Phone,
+  MapPin,
+  EnvelopeOpen,
+} from "./icons";
 
 export const cardData = [
   {
@@ -136,17 +146,97 @@ export const staffs = [
     name: "Ogunmepon Olanrewaju",
     title: "Teacher",
   },
-]
+];
 
 export const testimoneers = [
   {
     image: imageUrl,
-    description: "Visioneers Elementary School has had a profound impact on my life. The caring teachers, supportive environment, and enriching experiences have prepared me for success both academically and personally. I'm grateful for the unforgettable memories and the strong foundation it provided for my future.",
+    description:
+      "Visioneers Elementary School has had a profound impact on my life. The caring teachers, supportive environment, and enriching experiences have prepared me for success both academically and personally. I'm grateful for the unforgettable memories and the strong foundation it provided for my future.",
     name: "Adeyemo Ademola",
   },
   {
     image: imageUrl,
-    description: "As a former student of Visioneers Elementary School, I can confidently say it was a transformative experience. The nurturing environment, dedicated teachers, and diverse opportunities helped shape my future with confidence and determination",
+    description:
+      "As a former student of Visioneers Elementary School, I can confidently say it was a transformative experience. The nurturing environment, dedicated teachers, and diverse opportunities helped shape my future with confidence and determination",
     name: "Adeyemo Sultan",
+  },
+];
+
+export const StaffCardData = [
+  {
+    icon: graduationCap,
+    title: "Professionalism",
+    subTitle:
+      "Our staff members uphold the highest standards of professionalism.",
+    description:
+      "They are dedicated to maintaining a positive and respectful environment, ensuring that every student and colleague feels valued. Whether in the classroom or during school events, they consistently demonstrate ethical behavior and integrity.",
+  },
+  {
+    icon: robot,
+    title: "Passion for Education",
+    subTitle: "Our staff genuinely loves what they do.",
+    description:
+      "They see teaching as more than a job; it’s a calling. This passion translates into inspiring lessons that spark curiosity and a lifelong love for learning in our students.",
+  },
+  {
+    icon: socialIcon,
+    title: "Communication Skills",
+    subTitle: "Clear and open communication is a cornerstone of our school.",
+    description:
+      "Our staff excels at building strong relationships with students, parents, and colleagues. They listen actively, provide constructive feedback, and ensure everyone stays informed and connected.",
+  },
+  {
+    icon: profile,
+    title: "Empathy and Patience",
+    subTitle: "We understand that every student is unique.",
+    description:
+      "Our staff members are compassionate and patient, recognizing the individual needs and challenges of each student. They create a supportive environment where all learners feel comfortable to grow at their own pace.",
+  },
+  {
+    icon: telescope,
+    title: "Innovation and Adaptability",
+    subTitle: "In a rapidly changing world, our staff embraces innovation.",
+    description:
+      "They incorporate modern teaching methods and technologies into their classrooms, ensuring students are prepared for the future. They also adapt quickly to new challenges, whether it's integrating digital learning or evolving curricula.",
+  },
+  {
+    icon: chart,
+    title: "Organizational Skills",
+    subTitle: "Efficient and effective, our staff members are well-organized.",
+    description:
+      "They plan lessons meticulously, manage classroom activities smoothly, and maintain accurate records. This ensures a structured and productive learning environment.",
+  },
+  {
+    icon: leaderboardIcon,
+    title: "Leadership and Teamwork",
+    subTitle: "Our staff leads by example and works collaboratively.",
+    description:
+      "Whether guiding a classroom or working on school-wide initiatives, they demonstrate strong leadership. At the same time, they thrive in teamwork, contributing to a cohesive and cooperative school community.",
+  },
+  {
+    icon: bookClose,
+    title: "Expertise in Subject Area",
+    subTitle: "Each member of our teaching staff is a master in their field.",
+    description:
+      "They bring in-depth knowledge and a passion for their subject, creating engaging and informative lessons. This ensures that our students receive a top-tier education tailored to modern academic standards.",
+  },
+];
+
+export const contacts = [
+  {
+    icon: MapPin,
+    title: "Location",
+    description: "D18 Oloruntedo Estate Aduloju Town Mfm Bus Stop Ojoo Express, Ibadan.",
+  },
+  {
+    icon: EnvelopeOpen,
+    title: "Email",
+    description: "ves@gmail.com",
+  },
+  {
+    icon: Phone,
+    title: "Telephone",
+    description: "09090934714, 08134993309 Monday - Friday, 07:00am - 05:00pm",
   },
 ]

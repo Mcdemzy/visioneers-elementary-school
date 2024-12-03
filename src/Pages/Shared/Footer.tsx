@@ -32,7 +32,7 @@ function Footer() {
               <h2 className="text-sm font-bold text-[#6B6B6B] text-[20px] font-Inter uppercase">
                 Links
               </h2>
-              <ul className="text-sm md:text-base text-[#8C8C8C] dark:text-gray-400 font-medium space-y-5">
+              <ul className="text-sm md:text-base text-[#8C8C8C] dark:text-gray-400 font-medium space-y-4">
                 <li className="">
                   <a href="#" className="hover:underline">
                     Home
@@ -69,7 +69,7 @@ function Footer() {
               <h2 className="text-sm font-bold text-[#6B6B6B] text-[20px] font-Inter uppercase">
                 Contact Us
               </h2>
-              <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium space-y-5">
+              <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium space-y-4">
                 <li className=" flex gap-x-[10px] justify-start items-center">
                   <Compass color="#6B6B6B" />
                   <a href="#" className="hover:underline ">
@@ -99,7 +99,7 @@ function Footer() {
               <h2 className="text-sm font-bold text-[#6B6B6B] text-[20px] font-Inter uppercase">
                 Social Contact
               </h2>
-              <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium space-y-5">
+              <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium space-y-4">
                 <li className=" flex gap-x-[10px] justify-start items-center">
                   <Facebook color="#6B6B6B" />
                   <a href="#" className="hover:underline ">
