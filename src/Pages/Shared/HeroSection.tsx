@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function HeroSection() {
   return (
-    <section className="bg-[#FCF3FF] min-h-screen pt-28 flex items-center justify-between px-10 md:px-20 lg:px-28">
+    <section className="bg-[#FCF3FF] min-h-screen pt-28 flex items-center justify-around">
       <div className="max-w-lg space-y-6">
         <h1 className="text-2xl text-[#57002C] font-medium font-Inter">
           Welcome to Visioneers Elementary School
@@ -27,19 +27,19 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[560px] w-[700px] relative">
-        <div className="">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 xl:h-[560px] h-[420px] xl:w-[700px] w-[520px] relative">
+        <div className="group overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 w-60 h-60">
           <img
-            src="images/schoolBoyy.jpg"
+            src="images/Kids.jpg"
             alt=""
-            className="border-[#57007B] border-2 absolute w-80 h-80 rounded-tl-[20px] rounded-br-[20px] top-0 left-0"
+            className="transition-all duration-300 xl:w-80 xl:h-80 w-60 h-60 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110"
           />
         </div>
-        <div className="">
+        <div className="group absolute bottom-0 right-0 overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 w-60 h-60">
           <img
-            src="images/schoolGirll.jpg"
+            src="images/scissors.jpg"
             alt=""
-            className="border-[#57007B] border-2 absolute w-80 h-80 rounded-tl-[20px] rounded-br-[20px] bottom-0 right-0"
+            className="transition-all duration-300 xl:w-80 xl:h-80 w-60 h-60 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110"
           />
         </div>
       </div>

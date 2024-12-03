@@ -17,14 +17,14 @@ function Navbar() {
 
   return (
     <nav
-      className={`flex items-center justify-around py-6 gap-80 bg-opacity-0 transition-shadow duration-300 fixed w-full top-0 z-10 ${
+      className={`flex items-center justify-around xl:py-6 py-3 gap-80 bg-opacity-0 transition-shadow duration-300 fixed w-full top-0 z-10 ${
         hasShadow
           ? 'backdrop-blur-lg backdrop-brightness-90 bg-white/40 border border-white/20 rounded-lg shadow-lg'
           : ''
       }`}
     >
       <NavLink to={'/'}>
-        <div className="w-16">
+        <div className="xl:w-16 w-14">
           <img src="/images/logo.png" alt="Logo" />
         </div>
       </NavLink>
