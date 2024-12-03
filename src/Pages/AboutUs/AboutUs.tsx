@@ -1,18 +1,14 @@
-import {
-  Compass,
-  Facebook,
-  Instagram,
-  Mail,
-  Phone,
-  Send,
-  Twitter,
-} from "lucide-react";
+import NewsLetter from "../Shared/NewsLetter";
+import Footer from "../Shared/Footer";
+import Navbar from "../Shared/Navbar";
 
 export default function AboutUs() {
   return (
     <section>
-      <nav className="w-full h-[126.41px] shadow-lg"></nav>
-      <main className="mt-12">
+      <div className="hidden lg:block">
+        <Navbar />
+      </div>
+      <main className="pt-28 mt-12">
         <h1 className="flex gap-x-1.5 justify-center items-center font-Inter text-[34px] font-bold leading-[29.05px]">
           About <p className="text-primary">Us</p>
         </h1>
@@ -195,160 +191,8 @@ export default function AboutUs() {
         </div>
       </div>
 
-      {/* news letters */}
-      <div
-        style={{ backgroundImage: "url(/images/newsletter.png)" }}
-        className="flex justify-center items-center shadow-md rounded-md mt-20 w-[90%] h-[300px] md:h-[390px] m-auto"
-      >
-        <div className=" space-y-[40px] w-[90%] md:w-[60%] h-[117px] m-auto">
-          <p className="text-base md:text-[24px] font-Inter text-center font-[700]">
-            JOIN OUR <strong className="text-primary">NEWSLETTER</strong> TO GET
-            MORE <strong className="text-primary">INFORMATION</strong> ABOUT US
-          </p>
-          <form className="w-full  md:space-y-[40px]" action="#">
-            <div className="items-center mx-auto mb-3 space-y-4 max-w-screen-sm flex justify-start sm:space-y-0">
-              <div className="relative w-full">
-                <label
-                  htmlFor="email"
-                  className="hidden mb-2 text-sm font-medium text-[#6B6B6B] text-[20px] font-Inter dark:text-gray-300"
-                >
-                  Email address
-                </label>
-                <input
-                  className="block p-3 w-full text-sm md:text-base text-black  font-Inter bg-gray-50 rounded-lg border-y-2 border-l-2 border-[#57007B] sm:rounded-none sm:rounded-l-lg focus:ring-primary focus:border-primary-500 dark:placeholder-gray-400  dark:focus:ring-primary-500 dark:focus:border-primary"
-                  placeholder="Enter your E-mail to receive our news letter"
-                  type="email"
-                  id="email"
-                  required
-                />
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="-mt-4 md:-mt-0 bg-[#57007B]  py-3 md:py-3.5 px-5 w-full text-sm font-medium text-center text-white rounded-lg border-y cursor-pointer bg-primary-700 border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                >
-                  <Send />
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <footer className="px-4 md:px-[80px] pt-[20px] w-full border mt-20 bg-[#FCF3FF]">
-        <div className="space-y-[200px] mx-auto w-full  p-4 py-6 lg:py-8">
-          <div className="space-y-10 md:flex md:justify-start gap-x-[50px] md:gap-x-[150px]">
-            <div className=" mb-6 md:mb-0">
-              <a href="#" className="w-[280px] flex flex-col gap-y-[24px]">
-                <img
-                  src="/images/logo.png"
-                  className="w-[90.25px] h-[118px] me-3"
-                  alt="FlowBite Logo"
-                />
-                <p className="text-[12px] font-Inter font-[500] leading-[14.52px] text-[#6B6B6B]">
-                  Visioneers Elementary School is dedicated to nurturing every
-                  aspect of a child's development in a complex and challenging
-                  world. We harness all available resources to provide a
-                  distinctive experience for every student at Visioneers.
-                </p>
-              </a>
-            </div>
-            <div className="w-full  grid-cols-2 gap-8 sm:gap-6 flex flex-row justify-between gap-x-[8px] md:gap-x-[150px] flex-wrap">
-              <div className="">
-                <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
-                  Links
-                </h2>
-                <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Home
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      About Us
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Academics
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Admission
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Our Staffs
-                    </a>
-                  </li>
-                  <li className="mb-4">
-                    <a href="#" className="hover:underline">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div className="">
-                <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
-                  Contact Us
-                </h2>
-                <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
-                    <Compass color="#6B6B6B" />
-                    <a href="#" className="hover:underline ">
-                      visioneerselementaryschool.com
-                    </a>
-                  </li>
-                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
-                    <Mail color="#6B6B6B" />
-                    <a href="#" className="hover:underline ">
-                      visioneersschool@gmail.com
-                    </a>
-                  </li>
-                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
-                    <Phone color="#6B6B6B" />
-                    <div className="flex flex-col ">
-                      <a href="#" className="hover:underline ">
-                        +234 814 3036019
-                      </a>
-                      <a href="#" className="hover:underline ">
-                        +234 814 3036019
-                      </a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="">
-                <h2 className="mb-6 text-sm font-semibold text-[#6B6B6B] text-[20px] font-Inter uppercase">
-                  Social Contact
-                </h2>
-                <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium">
-                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
-                    <Facebook color="#6B6B6B" />
-                    <a href="#" className="hover:underline ">
-                      Facebook
-                    </a>
-                  </li>
-                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
-                    <Twitter color="#6B6B6B" />
-                    <a href="#" className="hover:underline ">
-                      Twitter
-                    </a>
-                  </li>
-                  <li className="mb-4 flex gap-x-[10px] justify-start items-center">
-                    <Instagram color="#6B6B6B" />
-                    <a href="#" className="hover:underline ">
-                      Instagram
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <NewsLetter />
+      <Footer />
     </section>
   );
 }
