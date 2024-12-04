@@ -1,124 +1,128 @@
-import {
-  Compass,
-  Mail,
-  Phone,
-  Facebook,
-  Twitter,
-  Instagram,
-} from "lucide-react";
+import { LiaGreaterThanSolid } from "react-icons/lia";
+import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { FaGoogle, FaInstagram } from "react-icons/fa";
+import { IoMdHome } from "react-icons/io";
+import { BiSolidEnvelope } from "react-icons/bi";
+import { MdPhone } from "react-icons/md";
 
 function Footer() {
   return (
-    <footer className=" pt-[20px] w-full border mt-20 bg-[#FCF3FF]">
+    <footer className=" py-[30px] w-full border mt-20 bg-[#FCF3FF]">
       <div className="space-y-[200px] mx-auto w-full  p-6 py-6 lg:py-8">
-        <div className="space-y-10 md:flex md:justify-start">
-          <div className="w-full  grid-cols-2 gap-8 sm:gap-6 flex flex-row justify-between gap-x-[8px] md:gap-x-[150px] flex-wrap">
-            <div className=" mb-6 md:mb-0">
-              <a href="#" className="w-[280px] flex flex-col gap-y-10">
+        <div className="space-y-10">
+          <div className="flex justify-around">
+            <div className="flex flex-col gap-y-10">
+              <a href="#">
                 <img
                   src="/images/logo.png"
-                  className="w-[90.25px] h-[118px] me-3"
+                  className="w-[100px] h-[130px] me-3"
                   alt="FlowBite Logo"
                 />
-                <p className="text-[12px] font-Inter font-medium text-[#6B6B6B]">
-                  Visioneers Elementary School is dedicated to nurturing every
-                  aspect of a child's development in a complex and challenging
-                  world. We harness all available resources to provide a
-                  distinctive experience for every student at Visioneers.
-                </p>
               </a>
+              <p className="text-[12px] font-Inter font-medium text-[#6B6B6B] w-[280px] ">
+                Visioneers Elementary School is dedicated to nurturing every
+                aspect of a child's development in a complex and challenging
+                world. We harness all available resources to provide a
+                distinctive experience for every student at Visioneers.
+              </p>
             </div>
-            <div className="space-y-6">
-              <h2 className="text-sm font-bold text-[#6B6B6B] text-[20px] font-Inter uppercase">
-                Links
+            <div className="space-y-5">
+              <h2 className="font-bold text-xl text-[#6B6B6B] font-[roboto]">
+                Quick Links
               </h2>
               <ul className="text-sm md:text-base text-[#8C8C8C] dark:text-gray-400 font-medium space-y-4">
-                <li className="">
+                <li className="flex items-center gap-2">
+                  <LiaGreaterThanSolid />
                   <a href="#" className="hover:underline">
                     Home
                   </a>
                 </li>
-                <li className="">
+                <li className="flex items-center gap-2">
+                  <LiaGreaterThanSolid />
                   <a href="#" className="hover:underline">
                     About Us
                   </a>
                 </li>
-                <li className="">
+                <li className="flex items-center gap-2">
+                  <LiaGreaterThanSolid />
                   <a href="#" className="hover:underline">
                     Academics
                   </a>
                 </li>
-                <li className="">
+                <li className="flex items-center gap-2">
+                  <LiaGreaterThanSolid />
                   <a href="#" className="hover:underline">
                     Admission
                   </a>
                 </li>
-                <li className="">
+                <li className="flex items-center gap-2">
+                  <LiaGreaterThanSolid />
                   <a href="#" className="hover:underline">
                     Our Staffs
                   </a>
                 </li>
-                <li className="">
+                <li className="flex items-center gap-2">
+                  <LiaGreaterThanSolid />
                   <a href="#" className="hover:underline">
                     Contact
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="space-y-6">
-              <h2 className="text-sm font-bold text-[#6B6B6B] text-[20px] font-Inter uppercase">
+            <div className="space-y-5">
+              <h2 className="font-bold text-xl text-[#6B6B6B] font-[roboto]">
+                Gallery
+              </h2>
+
+              <div className="gap-3 grid grid-cols-3">
+                <img src="" alt="" className="w-20 h-12 rounded-md" />
+                <img src="" alt="" className="w-20 h-12 rounded-md" />
+                <img src="" alt="" className="w-20 h-12 rounded-md" />
+                <img src="" alt="" className="w-20 h-12 rounded-md" />
+                <img src="" alt="" className="w-20 h-12 rounded-md" />
+                <img src="" alt="" className="w-20 h-12 rounded-md" />
+              </div>
+            </div>
+            <div className="space-y-5">
+              <h2 className="font-bold text-xl text-[#6B6B6B] font-[roboto]">
                 Contact Us
               </h2>
               <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium space-y-4">
-                <li className=" flex gap-x-[10px] justify-start items-center">
-                  <Compass color="#6B6B6B" />
-                  <a href="#" className="hover:underline ">
-                    visioneerselementaryschool.com
-                  </a>
+                <li className=" flex gap-x-[10px] justify-start items-start">
+                  <IoMdHome color="#8C8C8C" className="text-xl" />
+                  <p className="font-medium text-sm">
+                    3, Masha Allah St, Peace Estate, Elebu, <br />
+                    Oluyole Extension, Ibadan.
+                  </p>
                 </li>
                 <li className=" flex gap-x-[10px] justify-start items-center">
-                  <Mail color="#6B6B6B" />
-                  <a href="#" className="hover:underline ">
+                  <BiSolidEnvelope color="#6B6B6B" className="text-xl" />
+                  <a href="#" className="hover:underline font-medium text-sm">
                     visioneersschool@gmail.com
                   </a>
                 </li>
                 <li className=" flex gap-x-[10px] justify-start items-center">
-                  <Phone color="#6B6B6B" />
+                  <MdPhone color="#6B6B6B" className="text-xl" />
                   <div className="flex flex-col ">
-                    <a href="#" className="hover:underline ">
-                      +234 814 3036019
-                    </a>
-                    <a href="#" className="hover:underline ">
-                      +234 814 3036019
-                    </a>
+                    <p className="font-medium text-sm">+234 812 320 5762</p>
                   </div>
                 </li>
               </ul>
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-sm font-bold text-[#6B6B6B] text-[20px] font-Inter uppercase">
-                Social Contact
-              </h2>
-              <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium space-y-4">
-                <li className=" flex gap-x-[10px] justify-start items-center">
-                  <Facebook color="#6B6B6B" />
-                  <a href="#" className="hover:underline ">
-                    Facebook
-                  </a>
-                </li>
-                <li className=" flex gap-x-[10px] justify-start items-center">
-                  <Twitter color="#6B6B6B" />
-                  <a href="#" className="hover:underline ">
-                    Twitter
-                  </a>
-                </li>
-                <li className=" flex gap-x-[10px] justify-start items-center">
-                  <Instagram color="#6B6B6B" />
-                  <a href="#" className="hover:underline ">
-                    Instagram
-                  </a>
-                </li>
-              </ul>
+
+              <div className="flex items-center gap-3">
+                <a href="#">
+                  <FaFacebookF className="bg-[#4C67BB] text-[#FFFFFF] text-4xl p-2 rounded-full" />
+                </a>
+                <a href="#">
+                  <FaInstagram className="bg-[#F22B84] text-[#FFFFFF] text-4xl p-2 rounded-full" />
+                </a>
+                <a href="#">
+                  <FaGoogle className="bg-[#EF413F] text-[#FFFFFF] text-4xl p-2 rounded-full" />
+                </a>
+                <a href="#">
+                  <FaXTwitter className="bg-[#51A5E3] text-[#FFFFFF] text-4xl p-2 rounded-full" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
