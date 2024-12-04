@@ -10,7 +10,7 @@ function OurStaffs() {
       <Navbar />
 
       {/* Our Staffs */}
-      <section className="py-16 px-36">
+      <section className="py-16 px-[140px]">
         <div className="mx-auto text-center pt-20">
           <h2 className="text-2xl font-bold text-[#000000] font-Inter">
             Our <span className="text-[#7B02A1]">Staff</span>{" "}
@@ -21,18 +21,18 @@ function OurStaffs() {
           </p>
         </div>
 
-        <div className="group overflow-hidden shadow-xl shadow-[#0000001A] mt-14 h-[700px] rounded-tl-[33.33px] rounded-br-[33.33px]">
+        <div className="group overflow-hidden shadow-xl shadow-[#0000001A] mt-14 h-[444px] rounded-tl-[33.33px] rounded-br-[33.33px]">
           <img
-            src="/images/staffs.jpg"
+            src="/images/staff.png"
             alt="Staffs"
-            className="rounded-tl-[33.33px] rounded-br-[33.33px] h-[700px] group-hover:scale-110 transition-all duration-500"
+            className="rounded-tl-[33.33px] rounded-br-[33.33px] h-[444px] group-hover:scale-110 transition-all duration-500"
           />
         </div>
       </section>
 
       {/* Our Staffs card */}
       <section className="py-16 px-20">
-        <div className="bg-[#57007B] rounded-md p-2 mb-10">
+        <div className="bg-[#8D0E4E] rounded-md p-2 mb-10">
           <h4 className="text-base font-bold font-Inter text-[#FFFFFF] text-center">
             Our Staff Qualities & Qualifications
           </h4>
@@ -46,11 +46,11 @@ function OurStaffs() {
               <div className="flex items-center justify-center bg-[#FCF3FF] w-[60px] h-[60px] rounded-full">
                 <img src={card.icon} alt={card.title} className="w-8 h-8 " />
               </div>
-              <h3 className="text-lg font-bold text-[#57007B] font-Inter">
+              <h3 className="text-lg font-bold text-[#8D0E4E] font-Inter">
                 {card.title}
               </h3>
-              <div className="w-12 group-hover:w-20 transition-all duration-300 rounded-sm border-[#7B02A1] border-2"></div>
-              <h4 className="font-medium text-xs italic font-[roboto]">
+              <div className="w-12 group-hover:w-20 transition-all duration-300 rounded-sm border-[#FB39AD] border-2"></div>
+              <h4 className="font-medium text-sm italic font-[roboto]">
                 {card.subTitle}
               </h4>
               <p className="text-[#000000] font-medium text-xs font-[roboto] leading-4 ">

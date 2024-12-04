@@ -227,7 +227,7 @@ export const contacts = [
   {
     icon: MapPin,
     title: "Location",
-    description: "D18 Oloruntedo Estate Aduloju Town Mfm Bus Stop Ojoo Express, Ibadan.",
+    description: "D18 Oloruntedo Estate Aduloju Town\nMfm Bus Stop Ojoo Express, Ibadan.",
   },
   {
     icon: EnvelopeOpen,
@@ -237,6 +237,6 @@ export const contacts = [
   {
     icon: Phone,
     title: "Telephone",
-    description: "09090934714, 08134993309 Monday - Friday, 07:00am - 05:00pm",
+    description: "09090934714, 08134993309\nMonday - Friday, 07:00am - 05:00pm",
   },
 ]

@@ -22,7 +22,7 @@ function Contact() {
           </p>
         </div>
 
-        <div className="border border-gray-200 rounded-lg shadow-lg py-6 px-10 mx-auto space-y-10">
+        <div className="border border-[#F9E2FF] rounded-lg shadow-lg py-6 px-10 mx-auto space-y-10">
           <h3 className="text-xl font-bold mb-4">Contact Us</h3>
           <form action="" className="space-y-4">
             <div>
@@ -36,7 +36,7 @@ function Contact() {
                 type="text"
                 id="fullName"
                 placeholder="Ex. John Doe"
-                className="w-full p-3 border rounded-lg bg-[#FCF3FF] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="w-full p-3 border rounded-lg bg-[#FEF1F9] focus:outline-none focus:ring-2 focus:ring-[#8D0E4E]"
               />
             </div>
             <div>
@@ -50,7 +50,7 @@ function Contact() {
                 type="email"
                 id="email"
                 placeholder="Ex. email@mail.com"
-                className="w-full p-3 border rounded-lg bg-[#FCF3FF] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="w-full p-3 border rounded-lg bg-[#FEF1F9] focus:outline-none focus:ring-2 focus:ring-[#8D0E4E]"
               />
             </div>
             <div>
@@ -64,13 +64,13 @@ function Contact() {
                 id="description"
                 rows={4}
                 placeholder="Description"
-                className="w-full p-3 border rounded-lg bg-[#FCF3FF] focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="w-full p-3 border rounded-lg bg-[#FEF1F9] focus:outline-none focus:ring-2 focus:ring-[#8D0E4E]"
               ></textarea>
             </div>
             <div className="flex justify-center items-center">
               <button
                 type="submit"
-                className="w-full hover:w-9/12 hover:bg-[#5e2071] transition-all duration-700 bg-[#7B02A1] text-white p-3 rounded-lg"
+                className="w-full hover:w-9/12 hover:bg-[#681e43] transition-all duration-700 bg-[#8D0E4E] text-white p-3 rounded-lg"
               >
                 Submit
               </button>
@@ -82,9 +82,12 @@ function Contact() {
       <Map />
 
       <section className="mt-16 px-20">
-        <div className="bg-[#57007B] py-[60px] px-10 rounded-2xl flex justify-between gap-3">
+        <div className="bg-[#8D0E4E] py-[50px] px-10 rounded-2xl flex justify-between gap-3">
           {contacts.map((contact, index) => (
-            <div key={index} className="text-[#FFFFFF] flex gap-4 flex-1">
+            <div
+              key={index}
+              className="text-[#FFFFFF] flex gap-4 flex-1 p-4 rounded-xl transition-transform transform hover:scale-105 hover:bg-[#9E1A5E] hover:shadow-lg"
+            >
               <img
                 src={contact.icon}
                 alt={contact.title}
@@ -93,7 +96,12 @@ function Contact() {
               <div className="space-y-4">
                 <h3 className="font-bold text-2xl">{contact.title}</h3>
                 <p className="font-medium text-sm font-[roboto]">
-                  {contact.description}
+                  {contact.description.split("\n").map((line, idx) => (
+                    <span key={idx}>
+                      {line}
+                      <br />
+                    </span>
+                  ))}
                 </p>
               </div>
             </div>

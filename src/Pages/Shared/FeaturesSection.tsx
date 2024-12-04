@@ -23,10 +23,10 @@ function FeaturesSection() {
               <div className="flex items-center justify-center bg-[#F5E9FF] w-[60px] h-[60px] rounded-full mb-5">
                 <img src={card.icon} alt={card.title} className="w-8 h-8" />
               </div>
-              <h3 className="text-lg font-bold text-[#57007B] mb-5 font-Inter">
+              <h3 className="text-lg font-bold text-[#8D0E4E] mb-5 font-Inter">
                 {card.title}
               </h3>
-              <div className="w-12 group-hover:w-20 transition-all duration-300 rounded-sm border-[#7B02A1] border-2 mb-5"></div>
+              <div className="w-12 group-hover:w-20 transition-all duration-300 rounded-sm border-[#FB39AD] border-2 mb-5"></div>
               <p className="text-[#000000] font-normal text-xs leading-4 font-Inter">
                 {card.description}
               </p>
@@ -63,7 +63,7 @@ function FeaturesSection() {
                   className="h-full w-full mb-6 rounded-xl group-hover:scale-110 transition-all duration-300"
                 />
               </div>
-              <h3 className="text-xl font-bold text-[#57007B]">
+              <h3 className="text-xl font-bold text-[#8D0E4E]">
                 {feature.title}
               </h3>
               <p className="mt-3 text-[#000000] font-normal text-xs font-Inter">
@@ -128,17 +128,17 @@ function FeaturesSection() {
           {school.map((grade, index) => (
             <div
               key={index}
-              className="bg-[#FCF3FF] shadow-[#0000001A] shadow-lg p-6 rounded-md text-center flex flex-col items-center"
+              className="bg-[#FEF1F9] shadow-[#0000001A] shadow-lg p-6 rounded-md text-center flex flex-col items-center"
             >
               <div className="py-3 flex-1">
-                <h3 className="text-lg font-bold text-[#57007B] mb-5 font-Inter">
+                <h3 className="text-2xl font-bold text-[#8D0E4E] mb-5 font-Inter">
                   {grade.title}
                 </h3>
                 <p className="text-[#000000] font-medium leading-5 text-sm font-Inter w-[309.33px]">
                   {grade.description}
                 </p>
               </div>
-              <button className="bg-[#7B02A1] text-white rounded-md px-6 py-3 mt-6 hover:bg-[#650180] font-bold text-xs">
+              <button className="bg-[#8D0E4E] text-white rounded-md px-6 py-3 mt-6 hover:bg-[#681e43] font-bold text-xs">
                 {grade.btn}
               </button>
             </div>
@@ -169,7 +169,7 @@ function FeaturesSection() {
                   className="rounded-full h-64 w-64 group-hover:scale-125 transition-all duration-300"
                 />
               </div>
-              <h3 className="mt-6 text-[#57007B] font-bold text-xl font-[roboto]">
+              <h3 className="mt-6 text-[#8D0E4E] font-bold text-xl font-[roboto]">
                 {staff.name}
               </h3>
               <p className="mt-3 font-normal text-xs font-Inter text-[#000000]">
