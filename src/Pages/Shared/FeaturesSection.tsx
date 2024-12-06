@@ -4,10 +4,8 @@ import {
   galleries,
   school,
   staffs,
-  testimoneers,
 } from "./data";
 import DoubleLine from "./DoubleLine";
-import StarRating from "./StarRating";
 
 function FeaturesSection() {
   return (
