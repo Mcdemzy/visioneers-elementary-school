@@ -4,10 +4,8 @@ import {
   galleries,
   school,
   staffs,
-  testimoneers,
 } from "./data";
 import DoubleLine from "./DoubleLine";
-import StarRating from "./StarRating";
 
 function FeaturesSection() {
   return (
@@ -75,8 +73,8 @@ function FeaturesSection() {
       </section>
 
       {/* School Anthem here 😒*/}
-      <section className="py-16">
-        <div className="mx-auto rounded-xl w-[1120px] h-[780px] bg-[#00000033]">
+      <section className="py-16 lg:px-20 md:px-10 px-5">
+        <div className="mx-auto rounded-xl w-full lg:h-[780px] h-[500px] bg-[#00000033]">
           <h3 className="text-[#FFFFFF] text-4xl font-bold text-center pt-24">
             School Anthem
           </h3>
@@ -181,7 +179,7 @@ function FeaturesSection() {
       </section>
 
       {/* Testimoneers */}
-      <section className="py-16">
+      {/* <section className="py-16">
         <div className="mx-auto text-center">
           <h2 className="text-2xl font-bold text-[#000000] font-Inter">
             What Our Past <span className="text-[#7B02A1]">Students</span> Say
@@ -215,7 +213,7 @@ function FeaturesSection() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
