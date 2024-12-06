@@ -6,27 +6,25 @@ import NewsLetter from "../Shared/NewsLetter";
 export default function Academics() {
   return (
     <>
-      <div className="hidden lg:block">
-        <Navbar />
-      </div>
+      <Navbar />
       <section className="min-h-screen pt-28  items-center justify-between px-10 md:px-20 lg:px-28">
         <h1 className="my-6 flex gap-x-1.5 justify-center items-center font-Inter text-[34px] font-bold leading-[29.05px]">
           Our <p className="text-primary">Curriculum</p>
         </h1>
         <DoubleLine />
-        <div className="w-[100%] h-[300px] md:w-[80%] md:h-[637.5px] m-auto mt-[35.71px]">
+        <div className="w-[100%] h-[233px] md:w-[80%] md:h-[637.5px] m-auto mt-[35.71px]">
           <img
             src="/images/curriculum.png"
             alt="curriculum"
             className="w-full h-full rounded-md"
           />
         </div>
-        <div className="px-4 md:px-0 gap-y-[40px] gap-x-[30px] py-14 flex flex-col justify-center my-10 w-[100%]">
+        <div className="px-2 md:px-0 gap-y-[40px] gap-x-[30px] py-14 flex flex-col justify-center my-10 w-[100%]">
           <div className="text-center">
-            <h2 className="text-[25px] md:text-[40px] text-[#8D0E4E] font-[700] font-Inter">
+            <h2 className="text-[20px] md:text-[40px] text-[#8D0E4E] font-[700] font-Inter">
               Curriculum Overview
             </h2>
-            <p className="py-1 text-[#333333] text-xs md:text-[16px] font-Inter font-[400] leading-[26px]">
+            <p className="py-1 text-[#333333] text-[12px] md:text-[16px] font-Inter font-[400] leading-[26px]">
               Visioneers Elementary School Operates Two Curricula:
             </p>
           </div>
@@ -61,15 +59,15 @@ export default function Academics() {
           </h1>
           <DoubleLine />
 
-          <div className="mt-20  flex flex-row justify-between items-center gap-x-[48px] w-full h-[477px]">
-            <div className="hidden md:block bg-[#0000001A] rounded-md h-[420px] w-[50%]">
+          <div className="mt-20  flex flex-col gap-y-[40px] md:flex-row justify-between items-center gap-x-[48px] w-full">
+            <div className="block bg-[#0000001A] rounded-md h-[420px] w-full md:w-[50%]">
               <img
                 className="rounded-md w-full h-full"
                 src="/images/subjects.png"
                 alt="subjects"
               />
             </div>
-            <div className="md:h-[477px] w-full md:w-[40%]">
+            <div className="mt-4 md:mt-0 md:h-[477px] w-full md:w-[40%]">
               <div className="rounded-md flex justify-center items-center bg-[#8D0E4E] w-full text-white h-[43px]">
                 <p className="text-[16px] text-[#FFFFFF] font-Inter leading-[19.36px] font-[700]">
                   Subjects
@@ -116,28 +114,28 @@ export default function Academics() {
             through our vibrant gallery!
           </p>
           <div className="mt-12 flex flex-wrap justify-center  gap-[24px] items-center w-full">
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
           </div>
           <div className="mt-4 flex flex-wrap justify-center  gap-[24px] items-center w-full">
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
           </div>
           <div className="mt-4 flex flex-wrap justify-center  gap-[24px] items-center w-full">
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
           </div>
           <div className="mt-4 flex flex-wrap justify-center  gap-[24px] items-center w-full">
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[45%] md:w-[23%] h-[130px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
           </div>
         </div>
       </section>
