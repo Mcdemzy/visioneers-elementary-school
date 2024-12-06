@@ -5,14 +5,12 @@ import NewsLetter from "../Shared/NewsLetter";
 export default function Admission() {
   return (
     <>
-      <div className="hidden lg:block">
-        <Navbar />
-      </div>
-      <section className="min-h-screen pt-28  items-center justify-between px-10 md:px-20 lg:px-28">
+      <Navbar />
+      <section className=" pt-28  items-center justify-between px-10 md:px-20 lg:px-28">
         <img
           src="/images/admission.png"
           alt="admission"
-          className="m-auto my-10 w-[50%] h-[900px]"
+          className="m-auto w-full lg:w-[50%] h-[583.3px] md:h-[900px]"
         />
       </section>
       <NewsLetter />
