@@ -7,7 +7,7 @@ import { MdPhone } from "react-icons/md";
 
 function Footer() {
   return (
-    <footer className=" py-[30px] w-full border mt-20 bg-[#FCF3FF]">
+    <footer className=" py-[30px] px-5 w-full border mt-20 bg-[#FCF3FF]">
       <div className="space-y-[200px] mx-auto w-full py-6 lg:py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col gap-y-10">
