@@ -10,13 +10,13 @@ function Contact() {
     <div>
       <Navbar />
 
-      <section className="py-16 px-20">
+      <section className="py-16 lg:px-20 px-5">
         <div className="mx-auto text-center pt-20 pb-14">
-          <h2 className="text-2xl font-bold text-[#000000] font-Inter">
+          <h2 className="lg:text-2xl text-xl font-bold text-[#000000] font-Inter">
             Contact <span className="text-[#7B02A1]">Us</span>{" "}
           </h2>
           <DoubleLine />
-          <p className="mt-5 text-[#333333] font-medium text-base leading-[19.36px] font-Inter mx-auto">
+          <p className="md:mt-5 mt-3 text-[#333333] font-medium lg:text-base md:text-sm text-xs leading-[19.36px] font-Inter mx-auto">
             We're here to answer your questions and provide the support you
             need—reach out to us anytime!
           </p>
@@ -81,8 +81,8 @@ function Contact() {
 
       <Map />
 
-      <section className="mt-16 px-20">
-        <div className="bg-[#8D0E4E] py-[50px] px-10 rounded-2xl flex justify-between gap-3">
+      <section className="mt-16 lg:px-20 px-5">
+        <div className="bg-[#8D0E4E] lg:py-[50px] py-10 lg:px-10 px-5 rounded-2xl flex lg:flex-row flex-col justify-between gap-3">
           {contacts.map((contact, index) => (
             <div
               key={index}
@@ -91,11 +91,11 @@ function Contact() {
               <img
                 src={contact.icon}
                 alt={contact.title}
-                className="w-11 h-11"
+                className="lg:w-11 lg:h-11 w-10 h-10"
               />
               <div className="space-y-4">
-                <h3 className="font-bold text-2xl">{contact.title}</h3>
-                <p className="font-medium text-sm font-[roboto]">
+                <h3 className="font-bold lg:text-2xl text-xl">{contact.title}</h3>
+                <p className="font-medium lg:text-sm text-xs font-[roboto]">
                   {contact.description.split("\n").map((line, idx) => (
                     <span key={idx}>
                       {line}

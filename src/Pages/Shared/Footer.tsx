@@ -9,16 +9,16 @@ function Footer() {
   return (
     <footer className=" py-[30px] px-5 w-full border mt-20 bg-[#FCF3FF]">
       <div className="space-y-[200px] mx-auto w-full py-6 lg:py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col gap-y-10">
-            <a href="#">
+        <div className="flex flex-wrap items-start justify-between space-y-10">
+          <div className="flex flex-col gap-y-5 my-auto">
+            <a href="/">
               <img
                 src="/images/logo.png"
                 className="w-[100px] h-[130px] me-3"
                 alt="FlowBite Logo"
               />
             </a>
-            <p className="text-[12px] font-Inter font-medium text-[#6B6B6B] w-[280px] ">
+            <p className="text-[12px] font-Inter font-medium text-[#6B6B6B] md:w-[280px] w-full">
               Visioneers Elementary School is dedicated to nurturing every
               aspect of a child's development in a complex and challenging
               world. We harness all available resources to provide a distinctive
@@ -89,37 +89,37 @@ function Footer() {
             <ul className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium space-y-4">
               <li className=" flex gap-x-[10px] justify-start items-start">
                 <IoMdHome color="#8C8C8C" className="text-xl" />
-                <p className="font-medium text-sm">
+                <p className="font-medium lg:text-sm text-xs">
                   3, Masha Allah St, Peace Estate, Elebu, <br />
                   Oluyole Extension, Ibadan.
                 </p>
               </li>
               <li className=" flex gap-x-[10px] justify-start items-center">
                 <BiSolidEnvelope color="#6B6B6B" className="text-xl" />
-                <a href="#" className="hover:underline font-medium text-sm">
+                <a href="#" className="hover:underline font-medium lg:text-sm text-xs">
                   visioneersschool@gmail.com
                 </a>
               </li>
               <li className=" flex gap-x-[10px] justify-start items-center">
                 <MdPhone color="#6B6B6B" className="text-xl" />
                 <div className="flex flex-col ">
-                  <p className="font-medium text-sm">+234 812 320 5762</p>
+                  <p className="font-medium lg:text-sm text-xs">+234 812 320 5762</p>
                 </div>
               </li>
             </ul>
 
             <div className="flex items-center gap-3">
               <a href="#">
-                <FaFacebookF className="bg-[#4C67BB] text-[#FFFFFF] text-4xl p-2 rounded-full" />
+                <FaFacebookF className="bg-[#4C67BB] text-[#FFFFFF] lg:text-4xl text-[32px] p-2 rounded-full" />
               </a>
               <a href="#">
-                <FaInstagram className="bg-[#F22B84] text-[#FFFFFF] text-4xl p-2 rounded-full" />
+                <FaInstagram className="bg-[#F22B84] text-[#FFFFFF] lg:text-4xl text-[32px] p-2 rounded-full" />
               </a>
               <a href="#">
-                <FaGoogle className="bg-[#EF413F] text-[#FFFFFF] text-4xl p-2 rounded-full" />
+                <FaGoogle className="bg-[#EF413F] text-[#FFFFFF] lg:text-4xl text-[32px] p-2 rounded-full" />
               </a>
               <a href="#">
-                <FaXTwitter className="bg-[#51A5E3] text-[#FFFFFF] text-4xl p-2 rounded-full" />
+                <FaXTwitter className="bg-[#51A5E3] text-[#FFFFFF] lg:text-4xl text-[32px] p-2 rounded-full" />
               </a>
             </div>
           </div>

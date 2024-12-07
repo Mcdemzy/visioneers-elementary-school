@@ -13,7 +13,7 @@ const Map = () => {
   const leadCityCoords: [number, number] = [7.4223, 3.9076];
 
   return (
-    <div className="relative h-96 w-full px-36">
+    <div className="relative h-96 w-full lg:px-36 px-9">
       <MapContainer
         center={leadCityCoords}
         zoom={10}
