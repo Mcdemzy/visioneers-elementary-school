@@ -67,10 +67,10 @@ function Navbar() {
         </button>
       </nav>
 
-      {/* sidebar */}
+      {/* mobilebar */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-[9999] transform transition-transform duration-300 md:hidden ${
-          isSidebarOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 h-auto w-full bg-white shadow-lg z-[9999] transform transition-transform duration-300 md:hidden ${
+          isSidebarOpen ? "translate-y-0" : "-translate-y-full"
         } ${
           hasShadow
             ? "backdrop-blur-lg backdrop-brightness-80 bg-white/40 rounded-lg shadow-lg"
@@ -84,25 +84,36 @@ function Navbar() {
           <FiX />
         </button>
 
-        {/* Sidebar Links */}
+        {/* mobilebar Links */}
         <ul className="flex flex-col p-6 gap-4 font-medium text-lg mt-10">
-          {["About Us", "Academics", "Admission", "Our Staffs", "Contact"].map(
-            (item, index) => (
-              <li key={index}>
-                <NavLink
-                  to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  className={({ isActive }) =>
-                    `transition duration-200 ${
-                      isActive ? "text-[#7B02A1]" : "text-black"
-                    } hover:text-[#7B02A1]`
-                  }
-                  onClick={closeSidebar}
-                >
-                  {item}
-                </NavLink>
-              </li>
-            )
-          )}
+          {[
+            "Home",
+            "About Us",
+            "Academics",
+            "Admission",
+            "Our Staffs",
+            "Contact",
+          ].map((item, index) => (
+            <li key={index}>
+              <NavLink
+                to={
+                  item === "Home"
+                    ? "/"
+                    : `/${item.toLowerCase().replace(/\s+/g, "-")}`
+                }
+                className={({ isActive }) =>
+                  `transition duration-200 ${
+                    isActive
+                      ? "text-[#8D0E4E] font-bold text-base"
+                      : "text-[#6B6B6B] font-normal text-base"
+                  } hover:text-[#8D0E4E]`
+                }
+                onClick={closeSidebar}
+              >
+                {item}
+              </NavLink>
+            </li>
+          ))}
         </ul>
       </div>
     </div>

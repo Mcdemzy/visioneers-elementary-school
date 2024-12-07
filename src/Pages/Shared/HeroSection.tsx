@@ -11,24 +11,27 @@ function HeroSection() {
           </h1>
           <h2 className="md:text-5xl sm:text-[38px] text-[28px] leading-none font-bold md:leading-[58.51px] font-[freckle-face] text-[#8D0E4E] text-center lg:text-start">
             Developing The Future
-            <br className=""/>
-             Leading Lights.
+            <br className="" />
+            Leading Lights.
           </h2>
         </div>
 
-        <div className="block xl:h-[560px] lg:h-[420px] h-80 xl:w-[700px] lg:w-[520px] w-80  relative lg:hidden my-8 mx-auto">
-          <div className="group overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 ">
+        <div className="block xl:h-[560px] lg:h-[420px] h-80 xl:w-[700px] lg:w-[520px] w-80 relative lg:hidden my-8 mx-auto">
+          {/* Top Div */}
+          <div className="absolute top-0 left-0 overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 animate-upDown">
             <img
               src="images/hero1.png"
               alt=""
-              className="transition-all duration-300 xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110"
+              className="xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 rounded-tl-[20px] rounded-br-[20px]"
             />
           </div>
-          <div className="group absolute bottom-0 right-0 overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 w-40 h-40">
+
+          {/* Bottom Div */}
+          <div className="absolute bottom-0 right-0 overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 animate-upDown">
             <img
               src="images/hero2.png"
               alt=""
-              className="transition-all duration-300 xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110"
+              className="xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 rounded-tl-[20px] rounded-br-[20px]"
             />
           </div>
         </div>
