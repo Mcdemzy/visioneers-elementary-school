@@ -113,7 +113,7 @@ function FeaturesSection() {
               <div
                 className="absolute top-0 left-0 h-full bg-[#8D0E4E] transition-all duration-200"
                 style={{
-                  width: `${((currentCard + 1) / StaffCardData.length) * 100}%`,
+                  width: `${((currentCard + 1) / StaffCardData.length) * 134}%`,
                 }}
               ></div>
             </div>

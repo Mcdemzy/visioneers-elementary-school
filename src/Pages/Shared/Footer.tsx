@@ -32,37 +32,37 @@ function Footer() {
             <ul className="text-sm md:text-base text-[#8C8C8C] dark:text-gray-400 font-medium space-y-4">
               <li className="flex items-center gap-2">
                 <LiaGreaterThanSolid />
-                <a href="#" className="hover:underline">
+                <a href="/" className="hover:underline">
                   Home
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <LiaGreaterThanSolid />
-                <a href="#" className="hover:underline">
+                <a href="/about-us" className="hover:underline">
                   About Us
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <LiaGreaterThanSolid />
-                <a href="#" className="hover:underline">
+                <a href="/academics" className="hover:underline">
                   Academics
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <LiaGreaterThanSolid />
-                <a href="#" className="hover:underline">
+                <a href="/admission" className="hover:underline">
                   Admission
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <LiaGreaterThanSolid />
-                <a href="#" className="hover:underline">
+                <a href="/our-staffs" className="hover:underline">
                   Our Staffs
                 </a>
               </li>
               <li className="flex items-center gap-2">
                 <LiaGreaterThanSolid />
-                <a href="#" className="hover:underline">
+                <a href="/contact" className="hover:underline">
                   Contact
                 </a>
               </li>
