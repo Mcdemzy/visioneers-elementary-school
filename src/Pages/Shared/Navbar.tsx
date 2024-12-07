@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 
 function Navbar() {
   const [hasShadow, setHasShadow] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +26,28 @@ function Navbar() {
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
+
+  useEffect(() => {
+    const handleOutsideClick = (event: any) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        closeSidebar();
+      }
+    };
+
+    const handleScroll = () => {
+      if (isSidebarOpen) {
+        closeSidebar();
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isSidebarOpen, closeSidebar]);
 
   return (
     <div className="">
@@ -69,53 +93,54 @@ function Navbar() {
 
       {/* mobilebar */}
       <div
-        className={`fixed top-0 h-auto w-full bg-white shadow-lg z-[9999] transform transition-transform duration-300 md:hidden ${
-          isSidebarOpen ? "translate-y-0" : "-translate-y-full"
-        } ${
-          hasShadow
-            ? "backdrop-blur-lg backdrop-brightness-80 bg-white/40 rounded-lg shadow-lg"
-            : ""
-        }`}
+      ref={menuRef}
+      className={`fixed top-0 h-auto w-full bg-white shadow-lg z-[9999] transform transition-transform duration-300 md:hidden ${
+        isSidebarOpen ? "translate-y-0" : "-translate-y-full"
+      } ${
+        hasShadow
+          ? "backdrop-blur-lg backdrop-brightness-80 bg-white/40 rounded-lg shadow-lg"
+          : ""
+      }`}
+    >
+      <button
+        className="absolute top-8 right-6 text-3xl text-black focus:outline-none"
+        onClick={closeSidebar}
       >
-        <button
-          className="absolute top-8 right-6 text-3xl text-black focus:outline-none"
-          onClick={closeSidebar}
-        >
-          <FiX />
-        </button>
+        <FiX />
+      </button>
 
-        {/* mobilebar Links */}
-        <ul className="flex flex-col p-6 gap-4 font-medium text-lg mt-10">
-          {[
-            "Home",
-            "About Us",
-            "Academics",
-            "Admission",
-            "Our Staffs",
-            "Contact",
-          ].map((item, index) => (
-            <li key={index}>
-              <NavLink
-                to={
-                  item === "Home"
-                    ? "/"
-                    : `/${item.toLowerCase().replace(/\s+/g, "-")}`
-                }
-                className={({ isActive }) =>
-                  `transition duration-200 ${
-                    isActive
-                      ? "text-[#8D0E4E] font-bold text-base"
-                      : "text-[#6B6B6B] font-normal text-base"
-                  } hover:text-[#8D0E4E]`
-                }
-                onClick={closeSidebar}
-              >
-                {item}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Mobile Links */}
+      <ul className="flex flex-col p-6 gap-4 font-medium text-lg mt-10">
+        {[
+          "Home",
+          "About Us",
+          "Academics",
+          "Admission",
+          "Our Staffs",
+          "Contact",
+        ].map((item, index) => (
+          <li key={index}>
+            <NavLink
+              to={
+                item === "Home"
+                  ? "/"
+                  : `/${item.toLowerCase().replace(/\s+/g, "-")}`
+              }
+              className={({ isActive }) =>
+                `transition duration-200 ${
+                  isActive
+                    ? "text-[#8D0E4E] font-bold text-base"
+                    : "text-[#6B6B6B] font-normal text-base"
+                } hover:text-[#8D0E4E]`
+              }
+              onClick={closeSidebar}
+            >
+              {item}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </div>
     </div>
   );
 }
