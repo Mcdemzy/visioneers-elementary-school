@@ -6,9 +6,7 @@ import DoubleLine from "../Shared/DoubleLine";
 export default function AboutUs() {
   return (
     <section>
-      <div className="hidden lg:block">
-        <Navbar />
-      </div>
+      <Navbar />
       <main className="pt-28 mt-12">
         <h1 className="flex gap-x-1.5 justify-center items-center font-Inter text-[34px] font-bold leading-[29.05px]">
           About <p className="text-primary">Us</p>
@@ -18,7 +16,7 @@ export default function AboutUs() {
         <p className="mt-2 text-center font-[500] font-Inter leading-[19.36px]text-[16px] text-[#333333]">
           Learn more about our school.
         </p>
-        <div className="flex flex-col-reverse gap-y-10 lg:flex-row justify-start items-center gap-x-[72px] m-auto w-[90%] mt-10 md:mt-20">
+        <div className="flex flex-col gap-y-10 lg:flex-row justify-start items-center gap-x-[72px] m-auto w-[90%] mt-10 md:mt-20">
           <div className="space-y-[40px] w-full lg:w-[50%]">
             <h2 className="text-[32px] leading-10 md:text-[42px] md:leading-[38.73px] font-Inter font-bold text-[#8D0E4E]">
               Visioneers Elementary School
@@ -51,7 +49,7 @@ export default function AboutUs() {
         </h1>
         <DoubleLine />
 
-        <div className="flex flex-col gap-y-10 lg:flex-row justify-start items-center gap-x-[48px] m-auto w-[90%] mt-20">
+        <div className="flex flex-col-reverse gap-y-10 lg:flex-row justify-start items-center gap-x-[48px] m-auto w-[90%] mt-20">
           <div className="w-full lg:w-[55%]">
             <img
               className="w-full md:w-[751.4px] h-[300px] md:h-[420px] rounded-lg"
@@ -108,7 +106,7 @@ export default function AboutUs() {
         </h1>
         <DoubleLine />
 
-        <div className="flex flex-col-reverse gap-y-10 lg:flex-row justify-start items-center gap-x-[72px] m-auto w-[90%] mt-10 md:mt-20">
+        <div className="flex flex-col gap-y-10 lg:flex-row justify-start items-center gap-x-[72px] m-auto w-[90%] mt-10 md:mt-20">
           <div className="space-y-[40px] w-full lg:w-[50%]">
             <h2 className="text-[32px] md:text-[42px] leading-[38.73px] font-Inter font-bold text-[#8D0E4E]">
               Visioneers Elementary School
