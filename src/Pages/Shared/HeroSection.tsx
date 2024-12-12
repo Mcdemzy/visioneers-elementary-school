@@ -4,7 +4,7 @@ function HeroSection() {
   return (
     <section className="bg-[#FEF1F9] min-h-screen py-28 px-5 flex items-center justify-around lg:bg-none bg-[url(/images/hero1.png)] bg-no-repeat bg-cover bg-fixed bg-center relative">
       <div className="absolute inset-0 bg-white bg-opacity-75 pointer-events-none z-0">
-
+daddy
       </div>
       <div className="max-w-lg space-y-6 relative z-10">
         <div className="space-y-8 mt-5 mb-8">
