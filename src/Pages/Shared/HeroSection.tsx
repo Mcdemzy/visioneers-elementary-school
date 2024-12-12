@@ -50,9 +50,9 @@ function HeroSection() {
       {/* desktop image */}
       <div className="group overflow-hidden rounded-tl-[20px] rounded-br-[20px] lg:block hidden z-10">
         <img
-          src="images/hero1.png"
+          src="images/hero0.png"
           alt=""
-          className="transition-all duration-300 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110 min-w-[400px]"
+          className="transition-all duration-300 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110 w-[420px]"
         />
       </div>
     </section>
