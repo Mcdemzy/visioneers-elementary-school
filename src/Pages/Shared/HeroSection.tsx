@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 
 function HeroSection() {
   return (
-    <section className="bg-[#FCF3FF] min-h-screen pt-28 flex items-center justify-around">
-      <div className="max-w-lg space-y-6 mx-2">
+    <section className="bg-[#FEF1F9] min-h-screen py-28 flex items-center justify-around lg:bg-none bg-[url('images/hero1.png')] bg-no-repeat bg-cover bg-fixed bg-center relative">
+      <div className="absolute inset-0 bg-white bg-opacity-75 pointer-events-none z-0"></div>
+      <div className="max-w-lg space-y-6 relative z-10">
         <div className="space-y-8 mt-5 mb-8">
           <h1 className="md:text-2xl text-lg text-center lg:text-start text-[#57007B] font-medium font-Inter">
             Welcome to Visioneers Elementary <br className="lg:block hidden" />
@@ -16,24 +17,13 @@ function HeroSection() {
           </h2>
         </div>
 
-        <div className="block xl:h-[560px] lg:h-[420px] h-80 xl:w-[700px] lg:w-[520px] w-80 relative lg:hidden my-8 mx-auto">
-          {/* Top Div */}
-          <div className="absolute top-0 left-0 overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 animate-upDown">
-            <img
-              src="images/hero1.png"
-              alt=""
-              className="xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 rounded-tl-[20px] rounded-br-[20px]"
-            />
-          </div>
-
-          {/* Bottom Div */}
-          <div className="absolute bottom-0 right-0 overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 animate-upDown">
-            <img
-              src="images/hero2.png"
-              alt=""
-              className="xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 rounded-tl-[20px] rounded-br-[20px]"
-            />
-          </div>
+        {/* one image */}
+        <div className="rounded-tl-[20px] rounded-br-[20px] block lg:hidden mx-auto w-fit my-8">
+          <img
+            src="images/hero1.png"
+            alt=""
+            className=" rounded-tl-[20px] rounded-br-[20px] "
+          />
         </div>
 
         <div className="space-y-8 flex flex-col pb-14 items-center lg:items-start mt-8">
@@ -57,21 +47,13 @@ function HeroSection() {
         </div>
       </div>
 
-      <div className="lg:grid grid-cols-1 md:grid-cols-2 gap-6 xl:h-[560px] h-[420px] xl:w-[700px] w-[520px] relative hidden">
-        <div className="group overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 w-60 h-60">
-          <img
-            src="images/hero1.png"
-            alt=""
-            className="transition-all duration-300 xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110"
-          />
-        </div>
-        <div className="group absolute bottom-0 right-0 overflow-hidden rounded-tl-[20px] rounded-br-[20px] xl:w-80 xl:h-80 w-60 h-60">
-          <img
-            src="images/hero2.png"
-            alt=""
-            className="transition-all duration-300 xl:w-80 xl:h-80 lg:w-60 lg:h-60 w-40 h-40 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110"
-          />
-        </div>
+      {/* desktop image */}
+      <div className="group overflow-hidden rounded-tl-[20px] rounded-br-[20px] lg:block hidden z-10">
+        <img
+          src="images/hero0.png"
+          alt=""
+          className="transition-all duration-300 rounded-tl-[20px] rounded-br-[20px] group-hover:scale-110 w-[420px]"
+        />
       </div>
     </section>
   );
