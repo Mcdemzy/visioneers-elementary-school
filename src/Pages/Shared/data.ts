@@ -56,13 +56,13 @@ export const cardData = [
 
 export const features = [
   {
-    image: "/images/school-library.jpg",
+    image: "/images/school-library1.jpg",
     title: "School Library",
     description:
       "Our well-stocked library provides students with a wealth of resources to improve their reading skills and foster a love for literature.",
   },
   {
-    image: "/images/play-ground.jpg",
+    image: "/images/school-playground.jpg",
     title: "School Playground",
     description:
       "We provide a vibrant school playground where children can have fun, stay active, and build teamwork and cooperation through play.",
@@ -227,7 +227,8 @@ export const contacts = [
   {
     icon: MapPin,
     title: "Location",
-    description: "D18 Oloruntedo Estate Aduloju Town\nMfm Bus Stop Ojoo Express, Ibadan.",
+    description:
+      "03, Masha Allah Street, Peace Estate, Elebu, Oluyole Extension, Ibadan.",
   },
   {
     icon: EnvelopeOpen,
@@ -237,6 +238,6 @@ export const contacts = [
   {
     icon: Phone,
     title: "Telephone",
-    description: "09090934714, 08134993309\nMonday - Friday, 07:00am - 05:00pm",
+    description: "08123205762, 08123205762\nMonday - Friday, 07:00am - 05:00pm",
   },
-]
+];
