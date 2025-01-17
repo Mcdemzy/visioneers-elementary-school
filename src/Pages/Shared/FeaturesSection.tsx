@@ -10,6 +10,7 @@ import {
 } from "./data";
 import DoubleLine from "./DoubleLine";
 import "../Shared/scrollbar.css"
+import SchoolPrayer from "./SchoolPrayer";
 
 function FeaturesSection() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
@@ -61,7 +62,7 @@ function FeaturesSection() {
       {/* Card Section */}
       <section className="lg:py-16 py-10 lg:px-10 px-5">
         {/* Desktop */}
-        <div className="hidden md:grid grid-cols-2 gap-10">
+        <div className="hidden md:grid grid-cols-3 gap-10">
           {cardData.map((card, index) => (
             <div
               key={index}
@@ -178,11 +179,7 @@ function FeaturesSection() {
 
       {/* School Anthem here 😒*/}
       <section className="lg:py-16 py-10 lg:px-20 md:px-10 px-5">
-        <div className="mx-auto rounded-xl w-full lg:h-[780px] h-[500px] bg-[#00000033]">
-          <h3 className="text-[#FFFFFF] text-4xl font-bold text-center pt-24">
-            School Anthem
-          </h3>
-        </div>
+        <SchoolPrayer />
       </section>
 
       {/* Events & Gallery */}
@@ -261,7 +258,7 @@ function FeaturesSection() {
           </p>
         </div>
 
-        <div className="mt-14 flex gap-6 w-full overflow-auto lg:overflow-hidden scrollbar-hide scroll-smooth mx-auto">
+        <div className="mt-14 flex gap-6 w-full overflow-auto lg:overflow-hidden scrollbar-hide scroll-smooth mx-auto lg:justify-center justify-normal">
           {staffs.map((staff, index) => (
             <div key={index} className="flex items-center flex-col">
               <div className="overflow-hidden group rounded-full lg:h-64 lg:w-64 h-40 w-40">
