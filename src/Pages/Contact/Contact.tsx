@@ -9,7 +9,7 @@ function Contact() {
   return (
     <div>
       <Navbar />
-
+      {/* Working on Contact Page */}
       <section className="py-16 lg:px-20 px-5">
         <div className="mx-auto text-center pt-20 pb-14">
           <h2 className="lg:text-2xl text-xl font-bold text-[#000000] font-Inter">
@@ -94,7 +94,9 @@ function Contact() {
                 className="lg:w-11 lg:h-11 w-10 h-10"
               />
               <div className="space-y-4">
-                <h3 className="font-bold lg:text-2xl text-xl">{contact.title}</h3>
+                <h3 className="font-bold lg:text-2xl text-xl">
+                  {contact.title}
+                </h3>
                 <p className="font-medium lg:text-sm text-xs font-[roboto]">
                   {contact.description.split("\n").map((line, idx) => (
                     <span key={idx}>
