@@ -3,8 +3,13 @@ import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
 import DoubleLine from "../Shared/DoubleLine";
 import SchoolPrayer from "../Shared/SchoolPrayer";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutUs() {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/contact");
+  };
   return (
     <section>
       <Navbar />
@@ -47,13 +52,12 @@ export default function AboutUs() {
           </div>
         </div>
       </main>
-      {/* our vision */}
+      {/*  vision statement */}
       <div className="mt-20 md:mt-24 w-full">
         <h1 className="flex gap-x-1.5 justify-center items-center font-Inter text-[34px] font-bold leading-[29.05px]">
           Vision <p className="text-primary">Statement</p>
         </h1>
         <DoubleLine />
-
         <div className="flex flex-col-reverse gap-y-10 lg:flex-row justify-between items-center gap-x-[48px] m-auto w-[90%] mt-20">
           <div className="w-full lg:w-[45%]">
             <img
@@ -76,7 +80,10 @@ export default function AboutUs() {
               <li>To develop global leading lights in all human endeavours.</li>
             </ul>
             <div className="w-full flex justify-center items-center">
-              <button className="mt-4 bg-[#8D0E4E] text-white rounded-[4px] w-[166px] h-[51px] text-[16px] font-[500]">
+              <button
+                onClick={handleClick}
+                className="mt-4 bg-[#8D0E4E] text-white rounded-[4px] w-[166px] h-[51px] text-[16px] font-[500]"
+              >
                 Contact Us
               </button>
             </div>
