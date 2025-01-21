@@ -1,4 +1,10 @@
 import { contacts } from "../Shared/data";
+
+import { useRef, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import emailjs from "@emailjs/browser";
+
 import DoubleLine from "../Shared/DoubleLine";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
@@ -6,8 +12,41 @@ import NewsLetter from "../Shared/NewsLetter";
 import Map from "../Shared/Map";
 
 function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+  const [isSending, setIsSending] = useState(false);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!form.current) return;
+
+    setIsSending(true);
+
+    emailjs
+      .sendForm(
+        "service_v8tcnqi",
+        "template_4mcbjnf",
+        form.current,
+        "Bv1hcOwU8VLedk5Xt"
+      )
+      .then(
+        () => {
+          toast.success(
+            "Thank you! Your email has been sent successfully. We’ll get back to you shortly."
+          );
+          form.current?.reset();
+        },
+        (error) => {
+          toast.error(`Failed to send email: ${error.text}`);
+        }
+      )
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
+
   return (
     <div>
+      <ToastContainer />
       <Navbar />
       {/* Working on Contact Page */}
       <section className="py-16 lg:px-20 px-5">
@@ -24,7 +63,7 @@ function Contact() {
 
         <div className="border border-[#F9E2FF] rounded-lg shadow-lg py-6 px-10 mx-auto space-y-10">
           <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-          <form action="" className="space-y-4">
+          <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <div>
               <label
                 htmlFor="fullName"
@@ -34,6 +73,7 @@ function Contact() {
               </label>
               <input
                 type="text"
+                name="fullName"
                 id="fullName"
                 placeholder="Ex. John Doe"
                 className="w-full p-3 border rounded-lg bg-[#FEF1F9] focus:outline-none focus:ring-2 focus:ring-[#8D0E4E]"
@@ -48,6 +88,7 @@ function Contact() {
               </label>
               <input
                 type="email"
+                name="email"
                 id="email"
                 placeholder="Ex. email@mail.com"
                 className="w-full p-3 border rounded-lg bg-[#FEF1F9] focus:outline-none focus:ring-2 focus:ring-[#8D0E4E]"
@@ -63,6 +104,7 @@ function Contact() {
               <textarea
                 id="description"
                 rows={4}
+                name="message"
                 placeholder="Description"
                 className="w-full p-3 border rounded-lg bg-[#FEF1F9] focus:outline-none focus:ring-2 focus:ring-[#8D0E4E]"
               ></textarea>
@@ -70,6 +112,7 @@ function Contact() {
             <div className="flex justify-center items-center">
               <button
                 type="submit"
+                disabled={isSending}
                 className="w-full hover:w-9/12 hover:bg-[#681e43] transition-all duration-700 bg-[#8D0E4E] text-white p-3 rounded-lg"
               >
                 Submit
