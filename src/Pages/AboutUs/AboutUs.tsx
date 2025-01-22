@@ -22,11 +22,39 @@ export default function AboutUs() {
           Learn more about our school.
         </p>
         <div className="flex flex-col gap-y-10 lg:flex-row justify-start items-center gap-x-[72px] m-auto w-[90%] mt-10 md:mt-20">
-          <div className="space-y-[40px] w-full lg:w-[50%]">
+          {/* <div className="space-y-[40px] w-full lg:w-[50%]"> */}
+          <div className="space-y-[40px] w-full">
             <h2 className="text-[32px] leading-10 md:text-[42px] md:leading-[38.73px] font-Inter font-bold text-[#8D0E4E]">
               Visioneers Elementary School
             </h2>
-            <p className="text-sm md:text-[16px] text-[#333333] font-Inter leading-[26px]">
+            <p>Welcome to Visioneers Elementary School</p>
+            <p className="mt-6">
+              At Visioneers Elementary School, we are committed an all round
+              development of every student from academic excellence to skill
+              acquisition and character development. Our mission is to nurture
+              children to achieve their full potential by fostering a love for
+              learning, creativity, and integrity.
+            </p>
+            <p className="mt-6">
+              Through an all encompassing model, we blend rigorous academics
+              with enriching activities in sports, arts, and skill-set
+              development to develop global citizens. Our curriculum is designed
+              not only to educate but also to instill essential life skills and
+              values in children.
+            </p>
+            <p className="mt-6">
+              Our vibrant school environment inspires creativity and
+              exploration. Our state-of-the-art facilities ranges from our fully
+              digitalis classrooms, well equipped music room, ICT laboratory and
+              luxurious outdoor equipments enhances swift developement of our
+              students mentally and physically. Our "per child" mantra is the
+              watch word of our teaching staff hence implementing this by
+              attending to individual needs of every child in terms of time,
+              passion and attention. At Visioneers Elementary School, we prepare
+              our students to become global leading lights in whichever
+              endeavour they find themselves in the future.
+            </p>
+            {/* <p className="text-sm md:text-[16px] text-[#333333] font-Inter leading-[26px]">
               Visioneers Elementary School, with a focus on academic excellence
               and character development, we nurture young minds to reach their
               full potential. Our holistic approach includes academics, sports,
@@ -38,18 +66,18 @@ export default function AboutUs() {
               student's unique talents. At Visioneers Elementary School, we
               prepare students for success in academics and life, instilling
               values of integrity, respect, and perseverance.
-            </p>
+            </p> */}
             <p className="text-primary text-[20px] md:text-[24px] italic font-bold">
-              ~ Principal Visioneers Elementary School
+              ~ Proprietress, Visioneers Elementary School
             </p>
           </div>
-          <div className="flex justify-center items-center w-full lg:w-[50%]">
+          {/* <div className="flex justify-center items-center w-full lg:w-[50%]">
             <img
               className="w-full lg:w-[520.93px] h-[290px] rounded-lg"
               src="/images/directors-message.png"
               alt="about"
             />
-          </div>
+          </div> */}
         </div>
       </main>
       {/*  vision statement */}
