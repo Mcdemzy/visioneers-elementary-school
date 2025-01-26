@@ -11,9 +11,11 @@ function HeroSection() {
             School
           </h1>
           <h2 className="md:text-5xl sm:text-[38px] text-[28px] leading-none font-bold md:leading-[58.51px] font-[freckle-face] text-[#8D0E4E] text-center lg:text-start">
-            Developing Global
+            Developing The
             <br className="" />
-            Leading Lights.
+            Future Leading
+            <br className="" />
+            Lights.
           </h2>
         </div>
 

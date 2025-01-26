@@ -72,6 +72,7 @@ function Contact() {
                 Full name
               </label>
               <input
+                required
                 type="text"
                 name="fullName"
                 id="fullName"
@@ -87,6 +88,7 @@ function Contact() {
                 Email
               </label>
               <input
+                required
                 type="email"
                 name="email"
                 id="email"
@@ -102,6 +104,7 @@ function Contact() {
                 Description
               </label>
               <textarea
+                required
                 id="description"
                 rows={4}
                 name="message"
