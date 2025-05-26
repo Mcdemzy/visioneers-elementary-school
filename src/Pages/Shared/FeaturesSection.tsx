@@ -9,13 +9,17 @@ import {
   staffs,
 } from "./data";
 import DoubleLine from "./DoubleLine";
-import "../Shared/scrollbar.css"
+import "../Shared/scrollbar.css";
 import SchoolPrayer from "./SchoolPrayer";
+import SchoolAnthem from "./SchoolAnthem";
+import SchoolSongs from "./SchoolSongs";
+import mapImage from "/images/mapImage.png";
 
 function FeaturesSection() {
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [currentCard, setCurrentCard] = useState(0);
   const [cardWidth, setCardWidth] = useState(0);
+  // const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -138,6 +142,49 @@ function FeaturesSection() {
         </div>
       </section>
 
+      {/* Ibadan Section */}
+      <section className="relative p-4 lg:p-12 bg-[#FEF1F9] w-full">
+        <img
+          src="/images/AbstractDesign.svg"
+          alt="abstract design"
+          className="absolute top-0 right-0 w-auto h-80"
+        />
+
+        <div className="flex flex-col lg:flex-row lg:justify-end justify-center items-start lg:pr-48 pr-0">
+          {/* Text Card */}
+          <div className="bg-[#8D0E4E] text-white rounded-l-[20px] lg:rounded-br-[100px] rounded-br-[20px] p-10 h-auto z-10 lg:absolute lg:left-56 relative left-0">
+            <p
+              className="text-xs font-medium lg:text-lg lg:leading-9 leading-6 tracking-normal
+            lg:w-[560px]"
+            >
+              We are located in the bustling city of Ibadan, Oyo State. We are
+              poised to expose our students to 21st century teaching, thus,
+              empower the young minds harness the potentials of our pupils, such
+              that, they can compete globally and are equipped to surmount the
+              challenges of the real world.
+              <br />
+              <br />
+              By our cliché, developing the global leading light, we have
+              committed and dedicated staff, a conducive and enabling
+              environment that nurtures and arouse the critical thinking skill,
+              problem solving skill, social skill, oratory skill, creativity,
+              ability to collaborate and self confidence that supports our
+              pupils to relieve the cliché at global level.
+            </p>
+          </div>
+
+          {/* Map Image */}
+          <div className="-mt-20 lg:mt-0 "
+          >
+            <img
+              src={mapImage}
+              alt="Ibadan Map"
+              className="lg:w-[640px] lg:h-[650px] h-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Environment Section */}
       <section className="lg:py-16 py-10 px-5">
         <div className="max-w-6xl mx-auto text-center">
@@ -178,8 +225,14 @@ function FeaturesSection() {
       </section>
 
       {/* School Anthem here 😒*/}
-      <section className="lg:py-16 py-10 lg:px-20 md:px-10 px-5">
+      <section className="lg:pt-16 pt-10 lg:px-20 md:px-10 px-5">
         <SchoolPrayer />
+      </section>
+      <section className="lg:pt-16 pt-10 lg:px-20 md:px-10 px-5">
+        <SchoolAnthem />
+      </section>
+      <section className="lg:py-16 py-10 lg:px-20 md:px-10 px-5">
+        <SchoolSongs />
       </section>
 
       {/* Events & Gallery */}
