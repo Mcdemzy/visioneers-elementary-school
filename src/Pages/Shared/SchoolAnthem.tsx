@@ -1,7 +1,7 @@
 function SchoolAnthem() {
   return (
     <div
-      className="relative w-full h-auto flex items-center justify-center rounded-xl lg:py-24 py-12"
+      className="relative w-full h-auto flex items-center justify-center rounded-xl lg:py-24 py-12 shadow-md"
       style={{
         backgroundImage: "url('/images/flower.png')",
         backgroundSize: "cover",
