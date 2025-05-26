@@ -3,7 +3,7 @@ function SchoolPrayer() {
     <div
       className="relative w-full h-auto flex items-center justify-center rounded-xl lg:py-24 py-12"
       style={{
-        backgroundImage: "url('/images/visioneers_prayer_bg_image.png')",
+        backgroundImage: "url('/images/flower.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -15,16 +15,13 @@ function SchoolPrayer() {
           School <span className="text-[#7B02A1]">Prayer</span>
         </h1>
         <p className="lg:text-2xl text-sm font-medium lg:leading-[48px] leading-6 text-[#000000]">
-          With our hands put together and our heads bowed <br />
-          We ask the Lord Almighty to bless Visioneers School; <br />
-          enrich the management, enrich our parents and <br />
-          develop the minds of our teachers. <br />
-          <br />
-          We pray God gives us the students the wisdom, <br />
-          knowledge, understanding to excel in our academics <br />
-          and become global leading lights in our future endeavors. <br />
-          <br />
-          Amen Amen Amen
+          With our hands put together and our head bowed, we <br /> ask the Lord
+          Almighty to bless Visioneers Elementary <br />
+          School, enrich the management, enrich our parents, <br /> develop the
+          minds of our teachers, give we the <br />
+          students; wisdom, knowledge and understanding to
+          <br /> become global leading light and excel in our
+          <br /> endeavours. So, help me God.
         </p>
       </div>
     </div>

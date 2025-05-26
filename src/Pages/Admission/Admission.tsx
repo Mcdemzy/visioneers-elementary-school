@@ -3,9 +3,69 @@ import DoubleLine from "../Shared/DoubleLine";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
 import NewsLetter from "../Shared/NewsLetter";
+import { useState } from "react";
 export default function Admission() {
+  const [selectedClasses, setSelectedClasses] = useState<string[]>([]);
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, checked } = e.target;
+
+    setSelectedClasses((prev) =>
+      checked ? [...prev, id] : prev.filter((item) => item !== id)
+    );
+  };
+  const [formData, setFormData] = useState({
+    fullName: "",
+    gender: "",
+    dob: "",
+    religion: "",
+    fatherName: "",
+    occupation: "",
+    placeOfWork: "",
+    telephone: "",
+    homeAddress: "",
+    mothersName: "",
+    mothersOccupation: "",
+    placeOfWork2: "",
+    totalNumber: "",
+    position: "",
+    previousSchool: "",
+    whoPicks: "",
+    health: "",
+    admitted: "",
+    immunizationA: "",
+    immunizationB: "",
+    immunizationC: "",
+    immunizationD: "",
+    allergies: "",
+    childsHospital: "",
+    doctor: "",
+    docNumber: "",
+    details: "",
+  });
+  const [profilePicture, setProfilePicture] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setProfilePicture(file);
+      setPreviewUrl(URL.createObjectURL(file));
+    }
+  };
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+    const payload = {
+      ...formData,
+      profilePicture, // this is a File object
+      selectedClass: selectedClasses,
+    };
+    console.log("Payload:", payload);
   };
   return (
     <>
@@ -16,30 +76,67 @@ export default function Admission() {
             Application For <p className="text-primary">Admission</p>
           </h1>
           <DoubleLine />
-          <h2 className="mt-4 text-[#333333] flex gap-x-1.5 justify-center items-center font-Inter text-sm md:text-[27px] font-bold leading-[29.05px]">
+          <h2 className="mt-6 text-[#333333] flex gap-x-1.5 justify-center items-center font-Inter text-sm md:text-[27px] font-bold leading-[29.05px]">
             Registeration Form
           </h2>
           <form action="">
             {/* wd can comment out the profile picture if we dont need it */}
             {/* profile pic */}
-            <div className="my-5  flex items-center justify-center w-[220px] md:w-[280px] h-[220px] md:h-[280px] border border-[#6B6B6B] rounded-md mr-auto me-0 md:ml-auto">
-              <label
-                htmlFor="dropzone-file"
-                className="flex flex-col items-center justify-center w-full h-64 rounded-lg cursor-pointer hover:bg-gray-100"
-              >
-                <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                  <div className="rounded-full border w-[50px] md:w-[100px] h-[50px] md:h-[100px] border-[#333333] flex justify-center items-center">
-                    <Camera
-                      className="w-[30px] md:w-[40px] h-[24px] md:h-[32px]"
-                      color="#333333"
-                    />
+            {/* <div className="w-full flex justify-end">
+              <div className="my-5 flex items-center justify-center w-[220px] md:w-[280px] h-[220px] md:h-[280px] border border-[#6B6B6B] rounded-md">
+                <label
+                  htmlFor="dropzone-file"
+                  className="flex flex-col items-center justify-center w-full h-64 rounded-lg cursor-pointer hover:bg-gray-100"
+                >
+                  <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    <div className="rounded-full border w-[50px] md:w-[100px] h-[50px] md:h-[100px] border-[#333333] flex justify-center items-center">
+                      <Camera
+                        className="w-[30px] md:w-[40px] h-[24px] md:h-[32px]"
+                        color="#333333"
+                      />
+                    </div>
+                    <p className="mb-2 text-md md:text-[20px] text-center font-semibold mt-5  text-[#333333]">
+                      UPLOAD PASSPORT PHOTOGRAPH HERE
+                    </p>
                   </div>
-                  <p className="mb-2 text-md md:text-[20px] text-center font-semibold mt-5  text-[#333333]">
-                    UPLOAD PASSPORT PHOTOGRAPH HERE
-                  </p>
-                </div>
-                <input id="dropzone-file" type="file" className="hidden" />
-              </label>
+                  <input id="dropzone-file" type="file" className="hidden" />
+                </label>
+              </div>
+            </div> */}
+            <div className="w-full flex justify-end">
+              <div className="my-5 flex items-center justify-center w-[220px] md:w-[280px] h-[220px] md:h-[280px] border border-[#6B6B6B] rounded-md relative overflow-hidden">
+                <label
+                  htmlFor="dropzone-file"
+                  className="flex flex-col items-center justify-center w-full h-full rounded-lg cursor-pointer hover:bg-gray-100"
+                >
+                  {previewUrl ? (
+                    <img
+                      src={previewUrl}
+                      alt="Profile Preview"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                      <div className="rounded-full border w-[50px] md:w-[100px] h-[50px] md:h-[100px] border-[#333333] flex justify-center items-center">
+                        <Camera
+                          className="w-[30px] md:w-[40px] h-[24px] md:h-[32px]"
+                          color="#333333"
+                        />
+                      </div>
+                      <p className="mb-2 text-md md:text-[20px] text-center font-semibold mt-5 text-[#333333]">
+                        UPLOAD PASSPORT PHOTOGRAPH HERE
+                      </p>
+                    </div>
+                  )}
+                  <input
+                    id="dropzone-file"
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleImageChange}
+                  />
+                </label>
+              </div>
             </div>
             {/* inputs */}
 
@@ -56,6 +153,9 @@ export default function Admission() {
                 <input
                   type="text"
                   id="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
+                  required
                   placeholder="Last Name                                                                                        First Name                                                                                                                      Other Name(s)"
                   className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
@@ -72,6 +172,9 @@ export default function Admission() {
                   <input
                     type="text"
                     id="gender"
+                    value={formData.gender}
+                    onChange={handleChange}
+                    required
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -83,8 +186,11 @@ export default function Admission() {
                     Date of Birth <span className="text-[#821528]">*</span>
                   </label>
                   <input
-                    type="text"
+                    type="date"
                     id="dob"
+                    value={formData.dob}
+                    onChange={handleChange}
+                    required
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -98,6 +204,9 @@ export default function Admission() {
                   <input
                     type="text"
                     id="religion"
+                    value={formData.religion}
+                    onChange={handleChange}
+                    required
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -115,6 +224,9 @@ export default function Admission() {
                   <input
                     type="text"
                     id="fatherName"
+                    value={formData.fatherName}
+                    onChange={handleChange}
+                    required
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -128,6 +240,9 @@ export default function Admission() {
                   <input
                     type="text"
                     id="occupation"
+                    required
+                    value={formData.occupation}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -144,6 +259,9 @@ export default function Admission() {
                   <input
                     type="text"
                     id="placeOfWork"
+                    required
+                    value={formData.placeOfWork}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -157,6 +275,9 @@ export default function Admission() {
                   <input
                     type="tel"
                     id="telephone"
+                    required
+                    value={formData.telephone}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -173,6 +294,9 @@ export default function Admission() {
                   <input
                     type="text"
                     id="homeAddress"
+                    required
+                    value={formData.homeAddress}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -201,7 +325,10 @@ export default function Admission() {
                   </label>
                   <input
                     type="text"
-                    id="homeAddress"
+                    id="mothersName"
+                    required
+                    value={formData.mothersName}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -214,7 +341,10 @@ export default function Admission() {
                   </label>
                   <input
                     type="text"
-                    id="occupation"
+                    id="mothersOccupation"
+                    value={formData.mothersOccupation}
+                    onChange={handleChange}
+                    required
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -230,7 +360,10 @@ export default function Admission() {
                   </label>
                   <input
                     type="text"
-                    id="homeAddress"
+                    id="placeOfWork2"
+                    required
+                    value={formData.placeOfWork2}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -290,6 +423,9 @@ export default function Admission() {
                   <input
                     type="number"
                     id="totalNumber"
+                    required
+                    value={formData.totalNumber}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -304,6 +440,9 @@ export default function Admission() {
                   <input
                     type="text"
                     id="position"
+                    required
+                    value={formData.position}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -338,6 +477,9 @@ export default function Admission() {
                   type="text"
                   id="previousSchool"
                   placeholder=""
+                  required
+                  value={formData.previousSchool}
+                  onChange={handleChange}
                   className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -353,9 +495,11 @@ export default function Admission() {
 
                 <input
                   type="text"
-                  id="previousSchool"
+                  id="whoPicks"
                   placeholder=""
                   required
+                  value={formData.whoPicks}
+                  onChange={handleChange}
                   className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -374,6 +518,7 @@ export default function Admission() {
                     <input
                       type="checkbox"
                       id="dayCare"
+                      onChange={handleCheckboxChange}
                       className="w-7 h-7 text-primary border-gray-300 rounded focus:ring-primary "
                     />
                     <label
@@ -389,6 +534,7 @@ export default function Admission() {
                     <input
                       type="checkbox"
                       id="nursery"
+                      onChange={handleCheckboxChange}
                       className="w-7 h-7 text-primary  border-gray-300 rounded focus:ring-primary "
                     />
                     <label
@@ -403,6 +549,7 @@ export default function Admission() {
                     <input
                       type="checkbox"
                       id="primary"
+                      onChange={handleCheckboxChange}
                       className="w-7 h-7 text-primary  border-gray-300 rounded focus:ring-primary "
                     />
                     <label
@@ -430,6 +577,8 @@ export default function Admission() {
                   id="health"
                   placeholder=""
                   required
+                  value={formData.health}
+                  onChange={handleChange}
                   className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -448,6 +597,8 @@ export default function Admission() {
                   id="admitted"
                   placeholder=""
                   required
+                  value={formData.admitted}
+                  onChange={handleChange}
                   className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -484,7 +635,9 @@ export default function Admission() {
                   </label>
                   <input
                     type="text"
-                    id="a"
+                    id="immunizationA"
+                    value={formData.immunizationA}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -513,7 +666,9 @@ export default function Admission() {
                   </label>
                   <input
                     type="text"
-                    id="b"
+                    id="immunizationB"
+                    value={formData.immunizationB}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -542,7 +697,9 @@ export default function Admission() {
                   </label>
                   <input
                     type="text"
-                    id="c"
+                    id="immunizationC"
+                    value={formData.immunizationC}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -571,7 +728,9 @@ export default function Admission() {
                   </label>
                   <input
                     type="text"
-                    id="d"
+                    id="immunizationD"
+                    value={formData.immunizationD}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -592,7 +751,7 @@ export default function Admission() {
               {/* allergies */}
               <div className="mb-6">
                 <label
-                  htmlFor="admitted"
+                  htmlFor="allergies"
                   className="block text-md font-medium text-black mb-1"
                 >
                   Any allergies e.g Food, Medicine, etc
@@ -601,9 +760,11 @@ export default function Admission() {
 
                 <input
                   type="text"
-                  id="admitted"
+                  id="allergies"
                   placeholder=""
                   required
+                  value={formData.allergies}
+                  onChange={handleChange}
                   className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -619,9 +780,11 @@ export default function Admission() {
 
                 <input
                   type="text"
-                  id="family"
+                  id="childsHospital"
                   placeholder=""
                   required
+                  value={formData.childsHospital}
+                  onChange={handleChange}
                   className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
@@ -635,7 +798,9 @@ export default function Admission() {
                   </label>
                   <input
                     type="text"
-                    id="d"
+                    id="doctor"
+                    value={formData.doctor}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -649,6 +814,8 @@ export default function Admission() {
                   <input
                     type="tel"
                     id="tel"
+                    value={formData.docNumber}
+                    onChange={handleChange}
                     className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
                   />
                 </div>
@@ -667,6 +834,13 @@ export default function Admission() {
                   rows={4}
                   cols={3}
                   id="details"
+                  value={formData.details}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      details: e.target.value,
+                    }))
+                  }
                   placeholder=""
                   required
                   className="bg-[#FEF1F9] placeholder:text-[#8A8A8A] placeholder:font-[300] mt-1 block w-full px-3 py-2  rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary"
