@@ -6,6 +6,7 @@ import SchoolPrayer from "../Shared/SchoolPrayer";
 import { useNavigate } from "react-router-dom";
 import SchoolAnthem from "../Shared/SchoolAnthem";
 import SchoolSongs from "../Shared/SchoolSongs";
+import SchoolCreed from "../Shared/SchoolCreed";
 
 export default function AboutUs() {
   const navigate = useNavigate();
@@ -249,6 +250,9 @@ export default function AboutUs() {
       </div>
       <div className="mt-12 w-[90%] m-auto">
         <SchoolSongs />
+      </div>
+      <div className="mt-12 w-[90%] m-auto">
+        <SchoolCreed />
       </div>
       <NewsLetter />
       <Footer />

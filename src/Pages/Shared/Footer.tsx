@@ -57,7 +57,7 @@ function Footer() {
               <li className="flex items-center gap-2">
                 <LiaGreaterThanSolid />
                 <a href="/our-staffs" className="hover:underline">
-                  Our Staffs
+                  Our Staff
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -96,14 +96,19 @@ function Footer() {
               </li>
               <li className=" flex gap-x-[10px] justify-start items-center">
                 <BiSolidEnvelope color="#6B6B6B" className="text-xl" />
-                <a href="#" className="hover:underline font-medium lg:text-sm text-xs">
+                <a
+                  href="#"
+                  className="hover:underline font-medium lg:text-sm text-xs"
+                >
                   visioneersschool@gmail.com
                 </a>
               </li>
               <li className=" flex gap-x-[10px] justify-start items-center">
                 <MdPhone color="#6B6B6B" className="text-xl" />
                 <div className="flex flex-col ">
-                  <p className="font-medium lg:text-sm text-xs">+234 812 320 5762</p>
+                  <p className="font-medium lg:text-sm text-xs">
+                    +234 812 320 5762
+                  </p>
                 </div>
               </li>
             </ul>

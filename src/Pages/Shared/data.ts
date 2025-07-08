@@ -228,12 +228,13 @@ export const contacts = [
     icon: MapPin,
     title: "Location",
     description:
-      "03, Masha Allah Street, Peace Estate, Elebu, Oluyole Extension, Ibadan.",
+      "3 Agberu Avenue, Peace Estate by Masha Allah Bus-stop Elebu, Oluyole Extension Ibadan.",
   },
   {
     icon: EnvelopeOpen,
     title: "Email",
-    description: "ves@gmail.com",
+    description:
+      "visioneerselementaryschool@gmail.com\nvisioneersroyalacademy@gmail.com",
   },
   {
     icon: Phone,

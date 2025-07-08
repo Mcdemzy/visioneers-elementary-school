@@ -53,7 +53,7 @@ export default function Academics() {
             </p>
             {/*  */}
             <p className="mt-8 text-[#333333] text-sm md:text-[16px] font-Inter font-[400] leading-[24px]">
-              By our 21st century learning, we place emphasis on digital
+              By our 21st century education, we place emphasis on digital
               literacy to equip our children to become global leading light. All
               our classrooms are fitted with interactive white boards and
               projectors to facilitate learning. Digital literacy helps build
@@ -96,20 +96,22 @@ export default function Academics() {
               <p>
                 <strong>PRIMARY – </strong>This is an engaging learning space
                 where our pupils develop critical thinking skills, problem
-                solving, creativity and thirst for indepth knowledge.
+                solving, creativity and thirst for indepth knowledge. At VES, we
+                collaborate and foster cordial relationship with our parent.
+                With our robust curriculum, experienced educators, focus on
+                academic, talents, personal and character growth, we churn out
+                global leaders.
               </p>
               <p>
                 At VES, we collaborate and foster cordial relationship with our
-                parent. With our robust curriculum, experienced educators, focus
-                on academic, personal and character growth, we churn out global
-                leaders!
+                parents and community.
               </p>
             </section>
           </div>
         </div>
         {/* back 2 school */}
 
-        <div className="mt-20 md:mt-24 w-full">
+        {/* <div className="mt-20 md:mt-24 w-full">
           <div className="flex flex-col-reverse gap-y-10 lg:flex-row-reverse justify-between items-center gap-x-[48px] m-auto  mt-20">
             <div className="w-full lg:w-[45%]">
               <img
@@ -170,7 +172,7 @@ export default function Academics() {
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="pt-32">
           <h1 className=" flex gap-x-1.5 justify-center items-center font-Inter text-[24px] md:text-[34px] font-bold leading-[29.05px]">
             Our Photo <p className="text-primary">Gallery</p>

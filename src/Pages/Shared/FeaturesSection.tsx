@@ -158,10 +158,11 @@ function FeaturesSection() {
             lg:w-[560px]"
             >
               We are located in the bustling city of Ibadan, Oyo State. We are
-              poised to expose our students to 21st century teaching, thus,
-              empower the young minds harness the potentials of our pupils, such
-              that, they can compete globally and are equipped to surmount the
-              challenges of the real world.
+              poised to expose our students to 21st century education, thus,
+              empower the young minds and engage our pupils through active
+              learning and participation. We help harness the potentials of our
+              pupils, such that, they stand globally and are equipped to
+              surmount the challenges of the real world.
               <br />
               <br />
               By our cliché, developing the global leading light, we have
@@ -174,8 +175,7 @@ function FeaturesSection() {
           </div>
 
           {/* Map Image */}
-          <div className="-mt-20 lg:mt-0 "
-          >
+          <div className="-mt-20 lg:mt-0 ">
             <img
               src={mapImage}
               alt="Ibadan Map"

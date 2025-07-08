@@ -19,7 +19,7 @@ function OurStaffs() {
       }
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -56,7 +56,7 @@ function OurStaffs() {
     <div>
       <Navbar />
 
-      {/* Our Staffs */}
+      {/* Our Staff */}
       <section className="py-0 lg:px-[140px] px-5">
         <div className="mx-auto text-center pt-36">
           <h2 className="lg:text-2xl text-xl font-bold text-[#000000] font-Inter">
@@ -71,13 +71,13 @@ function OurStaffs() {
         <div className="group overflow-hidden shadow-xl shadow-[#0000001A] rounded-lg lg:mt-14 mt-10 h-full rounded- w-full lg:mb-14 mb-0">
           <img
             src="/images/staff.png"
-            alt="Staffs"
+            alt="Staff"
             className="rounded-lg h-full w-full group-hover:scale-110 transition-all duration-500"
           />
         </div>
       </section>
 
-      {/* Our Staffs card */}
+      {/* Our Staff card */}
       <section className="lg:py-16 py-10 lg:px-20 px-5">
         <div className="bg-[#8D0E4E] rounded-md p-2 mb-10">
           <h4 className="text-base font-bold font-Inter text-[#FFFFFF] text-center">

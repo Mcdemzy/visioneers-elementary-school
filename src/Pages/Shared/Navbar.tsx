@@ -7,7 +7,6 @@ function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-
   useEffect(() => {
     const handleScroll = () => {
       setHasShadow(window.scrollY > 0);
@@ -65,7 +64,7 @@ function Navbar() {
         </NavLink>
 
         <ul className="hidden md:flex items-center gap-10 font-medium text-xl">
-          {["About Us", "Academics", "Admission", "Our Staffs", "Contact"].map(
+          {["About Us", "Academics", "Admission", "Our Staff", "Contact"].map(
             (item, index) => (
               <li key={index}>
                 <NavLink
@@ -93,54 +92,54 @@ function Navbar() {
 
       {/* mobilebar */}
       <div
-      ref={menuRef}
-      className={`fixed top-0 h-auto w-full bg-white shadow-lg z-[9999] transform transition-transform duration-300 md:hidden ${
-        isSidebarOpen ? "translate-y-0" : "-translate-y-full"
-      } ${
-        hasShadow
-          ? "backdrop-blur-lg backdrop-brightness-80 bg-white/40 rounded-lg shadow-lg"
-          : ""
-      }`}
-    >
-      <button
-        className="absolute top-8 right-6 text-3xl text-black focus:outline-none"
-        onClick={closeSidebar}
+        ref={menuRef}
+        className={`fixed top-0 h-auto w-full bg-white shadow-lg z-[9999] transform transition-transform duration-300 md:hidden ${
+          isSidebarOpen ? "translate-y-0" : "-translate-y-full"
+        } ${
+          hasShadow
+            ? "backdrop-blur-lg backdrop-brightness-80 bg-white/40 rounded-lg shadow-lg"
+            : ""
+        }`}
       >
-        <FiX />
-      </button>
+        <button
+          className="absolute top-8 right-6 text-3xl text-black focus:outline-none"
+          onClick={closeSidebar}
+        >
+          <FiX />
+        </button>
 
-      {/* Mobile Links */}
-      <ul className="flex flex-col p-6 gap-4 font-medium text-lg mt-10">
-        {[
-          "Home",
-          "About Us",
-          "Academics",
-          "Admission",
-          "Our Staffs",
-          "Contact",
-        ].map((item, index) => (
-          <li key={index}>
-            <NavLink
-              to={
-                item === "Home"
-                  ? "/"
-                  : `/${item.toLowerCase().replace(/\s+/g, "-")}`
-              }
-              className={({ isActive }) =>
-                `transition duration-200 ${
-                  isActive
-                    ? "text-[#8D0E4E] font-bold text-base"
-                    : "text-[#6B6B6B] font-normal text-base"
-                } hover:text-[#8D0E4E]`
-              }
-              onClick={closeSidebar}
-            >
-              {item}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </div>
+        {/* Mobile Links */}
+        <ul className="flex flex-col p-6 gap-4 font-medium text-lg mt-10">
+          {[
+            "Home",
+            "About Us",
+            "Academics",
+            "Admission",
+            "Our Staff",
+            "Contact",
+          ].map((item, index) => (
+            <li key={index}>
+              <NavLink
+                to={
+                  item === "Home"
+                    ? "/"
+                    : `/${item.toLowerCase().replace(/\s+/g, "-")}`
+                }
+                className={({ isActive }) =>
+                  `transition duration-200 ${
+                    isActive
+                      ? "text-[#8D0E4E] font-bold text-base"
+                      : "text-[#6B6B6B] font-normal text-base"
+                  } hover:text-[#8D0E4E]`
+                }
+                onClick={closeSidebar}
+              >
+                {item}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
