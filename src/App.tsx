@@ -6,6 +6,7 @@ import Academics from "./Pages/Academics/Academics";
 import OurStaffs from "./Pages/OurStaffs/OurStaffs.";
 import Contact from "./Pages/Contact/Contact";
 import "leaflet/dist/leaflet.css";
+import Test from "./Pages/Shared/Test";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/academics" element={<Academics />} />
         <Route path="/our-staff" element={<OurStaffs />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </Router>
   );
