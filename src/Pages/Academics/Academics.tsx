@@ -1,5 +1,6 @@
 import DoubleLine from "../Shared/DoubleLine";
 import Footer from "../Shared/Footer";
+import Gallery from "../Shared/Gallery";
 import Navbar from "../Shared/Navbar";
 import NewsLetter from "../Shared/NewsLetter";
 
@@ -182,29 +183,8 @@ export default function Academics() {
             Join us as we showcase unforgettable moments and exciting events
             through our vibrant gallery!
           </p>
-          <div className="mt-12 flex flex-wrap justify-center  gap-[24px] items-center w-full">
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-          </div>
-          <div className="mt-4 flex flex-wrap justify-center  gap-[24px] items-center w-full">
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-          </div>
-          <div className="mt-4 flex flex-wrap justify-center  gap-[24px] items-center w-full">
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-          </div>
-          <div className="mt-4 flex flex-wrap justify-center  gap-[24px] items-center w-full">
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
-            <div className="bg-[#E8E8E8] w-[42%] lg:w-[23%] h-[180px] md:h-[320px] rounded-[12px]"></div>
+          <div>
+            <Gallery />
           </div>
         </div>
       </section>

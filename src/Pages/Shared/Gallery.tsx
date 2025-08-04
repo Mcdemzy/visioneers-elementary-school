@@ -65,11 +65,11 @@ const Gallery = () => {
   }, [isModalOpen, currentImageIndex, filteredImages]);
 
   return (
-    <main className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        {/* <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
           Photo Gallery
-        </h1>
+        </h1> */}
 
         {/* Category filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -79,7 +79,7 @@ const Gallery = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-6 py-2 rounded-full capitalize transition-all ${
                 activeCategory === category
-                  ? "bg-blue-600 text-white"
+                  ? "bg-primary text-white"
                   : "bg-white text-gray-800 hover:bg-gray-200"
               }`}
             >
