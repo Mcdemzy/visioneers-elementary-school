@@ -1,9 +1,9 @@
-import { LiaGreaterThanSolid } from "react-icons/lia";
 import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 import { FaGoogle, FaInstagram } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { BiSolidEnvelope } from "react-icons/bi";
 import { MdPhone } from "react-icons/md";
+import { IoIosArrowForward } from "react-icons/io";
 
 function Footer() {
   return (
@@ -31,37 +31,37 @@ function Footer() {
             </h2>
             <ul className="text-sm md:text-base text-[#8C8C8C] dark:text-gray-400 font-medium space-y-4">
               <li className="flex items-center gap-2">
-                <LiaGreaterThanSolid />
+                <IoIosArrowForward  />
                 <a href="/" className="hover:underline">
                   Home
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <LiaGreaterThanSolid />
+                <IoIosArrowForward  />
                 <a href="/about-us" className="hover:underline">
                   About Us
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <LiaGreaterThanSolid />
+                <IoIosArrowForward  />
                 <a href="/academics" className="hover:underline">
                   Academics
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <LiaGreaterThanSolid />
+                <IoIosArrowForward  />
                 <a href="/admission" className="hover:underline">
                   Admission
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <LiaGreaterThanSolid />
+                <IoIosArrowForward  />
                 <a href="/our-staffs" className="hover:underline">
                   Our Staff
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <LiaGreaterThanSolid />
+                <IoIosArrowForward  />
                 <a href="/contact" className="hover:underline">
                   Contact
                 </a>
@@ -74,12 +74,12 @@ function Footer() {
             </h2>
 
             <div className="gap-3 grid grid-cols-3">
-              <img src="" alt="" className="w-20 h-12 rounded-md" />
-              <img src="" alt="" className="w-20 h-12 rounded-md" />
-              <img src="" alt="" className="w-20 h-12 rounded-md" />
-              <img src="" alt="" className="w-20 h-12 rounded-md" />
-              <img src="" alt="" className="w-20 h-12 rounded-md" />
-              <img src="" alt="" className="w-20 h-12 rounded-md" />
+              <img src="/images/IMG-20250730-WA0055.jpg" alt="" className="w-20 h-12 rounded-md" />
+              <img src="/images/IMG-20250730-WA0089.jpg" alt="" className="w-20 h-12 rounded-md" />
+              <img src="/images/IMG-20250730-WA0059.jpg" alt="" className="w-20 h-12 rounded-md" />
+              <img src="/images/IMG-20250730-WA0060.jpg" alt="" className="w-20 h-12 rounded-md" />
+              <img src="/images/IMG-20250730-WA0065.jpg" alt="" className="w-20 h-12 rounded-md" />
+              <img src="/images/IMG-20250730-WA0066.jpg" alt="" className="w-20 h-12 rounded-md" />
             </div>
           </div>
           <div className="space-y-5">
