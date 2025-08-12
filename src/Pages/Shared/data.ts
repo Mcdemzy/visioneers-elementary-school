@@ -56,7 +56,7 @@ export const cardData = [
 
 export const features = [
   {
-    image: "/images/school-library1.jpg",
+    image: "/images/IMG-20250730-WA0090.jpg",
     title: "School Library",
     description:
       "Our well-stocked library provides students with a wealth of resources to improve their reading skills and foster a love for literature.",
@@ -79,29 +79,38 @@ const imageUrl = "https://picsum.photos/400/300/";
 
 export const galleries = [
   {
-    image: imageUrl,
+    image: "/images/IMG-20250730-WA0063.jpg",
   },
   {
-    image: imageUrl,
+    image: "/images/IMG-20250730-WA0075.jpg",
   },
   {
-    image: imageUrl,
+    image: "/images/IMG-20250730-WA0098.jpg",
   },
   {
-    image: imageUrl,
+    image: "/images/IMG-20250730-WA0105.jpg",
   },
   {
-    image: imageUrl,
+    image: "public/images/IMG-20250730-WA0060.jpg",
   },
   {
-    image: imageUrl,
+    image: "public/images/IMG-20250730-WA0060.jpg",
   },
   {
-    image: imageUrl,
+    image: "public/images/IMG-20250730-WA0060.jpg",
   },
   {
-    image: imageUrl,
+    image: "public/images/IMG-20250730-WA0060.jpg",
   },
+  // {
+  //   image: imageUrl,
+  // },
+  // {
+  //   image: imageUrl,
+  // },
+  // {
+  //   image: imageUrl,
+  // },
 ];
 
 export const school = [

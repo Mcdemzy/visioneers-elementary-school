@@ -51,7 +51,7 @@ function Navbar() {
   return (
     <div className="">
       <nav
-        className={`flex items-center justify-between px-6 xl:py-6 py-3 bg-opacity-0 transition-shadow duration-300 fixed w-full top-0 z-[9998] ${
+        className={`flex items-center justify-between px-6 xl:py-6 py-3 bg-opacity-0 transition-shadow duration-300 fixed w-full top-0 z-[1000] ${
           hasShadow
             ? "backdrop-blur-lg backdrop-brightness-90 bg-white/40 border border-white/20 rounded-lg shadow-lg"
             : ""

@@ -113,7 +113,7 @@ const Gallery = () => {
 
         {/* Enhanced Lightbox Modal */}
         {isModalOpen && selectedImage && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4">
+          <div className="fixed inset-0 z-[5000] flex items-center justify-center bg-black bg-opacity-90 p-4">
             <button
               onClick={goToPrevious}
               className="absolute left-4 md:left-8 lg:left-12 xl:left-20 text-white hover:text-gray-300 text-4xl md:text-5xl z-10"
