@@ -62,13 +62,13 @@ export const features = [
       "Our well-stocked library provides students with a wealth of resources to improve their reading skills and foster a love for literature.",
   },
   {
-    image: "/images/school-playground.jpg",
+    image: "/images/IMG-20250730-WA0081.jpg",
     title: "School Playground",
     description:
       "We provide a vibrant school playground where children can have fun, stay active, and build teamwork and cooperation through play.",
   },
   {
-    image: "/images/computer-lab.jpg",
+    image: "/images/IMG-20250814-WA0025.jpg",
     title: "Computer Laboratory",
     description:
       "The fully equipped computer lab provides hands-on opportunities for students to explore and excel in information technology and digital literacy.",
@@ -91,16 +91,16 @@ export const galleries = [
     image: "/images/IMG-20250730-WA0105.jpg",
   },
   {
-    image: "public/images/IMG-20250730-WA0060.jpg",
+    image: "/images/IMG-20250730-WA0060.jpg",
   },
   {
-    image: "public/images/IMG-20250730-WA0060.jpg",
+    image: "/images/IMG-20250814-WA0036.jpg",
   },
   {
-    image: "public/images/IMG-20250730-WA0060.jpg",
+    image: "/images/IMG-20250814-WA0049.jpg",
   },
   {
-    image: "public/images/IMG-20250730-WA0060.jpg",
+    image: "/images/IMG-20250814-WA0005.jpg",
   },
   // {
   //   image: imageUrl,

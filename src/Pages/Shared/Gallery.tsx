@@ -1,12 +1,16 @@
 // src/components/Gallery.tsx
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { galleryImages, GalleryImage } from "../../data/GalleryImageData";
+
+const ITEMS_PER_PAGE = 40;
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set()); // Changed to Set<number>
 
   const categories = [
     "all",
@@ -18,33 +22,49 @@ const Gallery = () => {
       ? galleryImages
       : galleryImages.filter((image) => image.category === activeCategory);
 
-  const openModal = (image: GalleryImage) => {
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredImages.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const paginatedImages = filteredImages.slice(startIndex, endIndex);
+
+  // Reset to page 1 when category changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeCategory]);
+
+  const openModal = useCallback((image: GalleryImage) => {
     const index = filteredImages.findIndex((img) => img.id === image.id);
     setCurrentImageIndex(index);
     setSelectedImage(image);
     setIsModalOpen(true);
     document.body.style.overflow = "hidden";
-  };
+  }, [filteredImages]);
 
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
     document.body.style.overflow = "auto";
-  };
+  }, []);
 
-  const goToPrevious = () => {
+  const goToPrevious = useCallback(() => {
     const isFirstImage = currentImageIndex === 0;
     const newIndex = isFirstImage
       ? filteredImages.length - 1
       : currentImageIndex - 1;
     setCurrentImageIndex(newIndex);
     setSelectedImage(filteredImages[newIndex]);
-  };
+  }, [currentImageIndex, filteredImages]);
 
-  const goToNext = () => {
+  const goToNext = useCallback(() => {
     const isLastImage = currentImageIndex === filteredImages.length - 1;
     const newIndex = isLastImage ? 0 : currentImageIndex + 1;
     setCurrentImageIndex(newIndex);
     setSelectedImage(filteredImages[newIndex]);
+  }, [currentImageIndex, filteredImages]);
+
+  // Handle image load
+  const handleImageLoad = (id: number) => { // Changed parameter type to number
+    setLoadedImages(prev => new Set(prev).add(id));
   };
 
   useEffect(() => {
@@ -62,15 +82,11 @@ const Gallery = () => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isModalOpen, currentImageIndex, filteredImages]);
+  }, [isModalOpen, currentImageIndex, filteredImages, closeModal, goToPrevious, goToNext]);
 
   return (
     <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">
-          Photo Gallery
-        </h1> */}
-
         {/* Category filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
@@ -90,17 +106,29 @@ const Gallery = () => {
 
         {/* Gallery grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredImages.map((image) => (
+          {paginatedImages.map((image) => (
             <div
               key={image.id}
               className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
               onClick={() => openModal(image)}
             >
+              {loadedImages.has(image.id) ? (
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-64 object-cover transition-transform group-hover:scale-105"
+                />
+              ) : (
+                <div className="w-full h-64 bg-gray-200 animate-pulse flex items-center justify-center">
+                  <span className="text-gray-500">Loading...</span>
+                </div>
+              )}
               <img
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-64 object-cover transition-transform group-hover:scale-105"
+                className="hidden"
                 loading="lazy"
+                onLoad={() => handleImageLoad(image.id)}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all flex items-center justify-center">
                 <span className="text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all">
@@ -110,6 +138,29 @@ const Gallery = () => {
             </div>
           ))}
         </div>
+
+        {/* Pagination controls */}
+        {filteredImages.length > ITEMS_PER_PAGE && (
+          <div className="flex justify-center mt-8 gap-4">
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+              className={`px-4 py-2 rounded ${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-primary text-white hover:bg-primary-dark'}`}
+            >
+              Previous
+            </button>
+            <span className="px-4 py-2">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              disabled={currentPage === totalPages}
+              className={`px-4 py-2 rounded ${currentPage === totalPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-primary text-white hover:bg-primary-dark'}`}
+            >
+              Next
+            </button>
+          </div>
+        )}
 
         {/* Enhanced Lightbox Modal */}
         {isModalOpen && selectedImage && (

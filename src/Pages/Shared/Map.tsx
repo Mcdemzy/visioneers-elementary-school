@@ -1,35 +1,16 @@
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-
-const purpleIcon = new L.Icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png", 
-  iconSize: [32, 32],
-  iconAnchor: [16, 32], 
-  popupAnchor: [0, -32],
-});
-
 const Map = () => {
-  const leadCityCoords: [number, number] = [7.4223, 3.9076];
-
   return (
     <div className="relative h-96 w-full lg:px-36 px-9">
-      <MapContainer
-        center={leadCityCoords}
-        zoom={10}
-        style={{ height: "100%", width: "100%" }}
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1160.2383803440096!2d3.819339977049789!3d7.352769928989053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398dc17267d541%3A0x5b6b87adb39999bd!2sVisioneers%20Elementary%20School!5e1!3m2!1sen!2sng!4v1755193638373!5m2!1sen!2sng" 
+        width="100%" 
+        height="100%" 
+        style={{border:0}} 
+        allowFullScreen 
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"
         className="rounded-xl"
-      >
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        />
-        <Marker position={leadCityCoords} icon={purpleIcon}>
-          <Popup>
-            <span>Lead City University - Our School Location</span>
-          </Popup>
-        </Marker>
-      </MapContainer>
+      ></iframe>
     </div>
   );
 };
