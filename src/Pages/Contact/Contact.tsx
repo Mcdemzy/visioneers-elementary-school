@@ -1,10 +1,6 @@
 import { contacts } from "../Shared/data";
-
 import { useRef, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
-
 import DoubleLine from "../Shared/DoubleLine";
 import Footer from "../Shared/Footer";
 import Navbar from "../Shared/Navbar";
@@ -14,6 +10,7 @@ import Map from "../Shared/Map";
 function Contact() {
   const form = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,13 +27,11 @@ function Contact() {
       )
       .then(
         () => {
-          toast.success(
-            "Thank you! Your email has been sent successfully. We’ll get back to you shortly."
-          );
+          setShowSuccessPopup(true);
           form.current?.reset();
         },
         (error) => {
-          toast.error(`Failed to send email: ${error.text}`);
+          alert(`Failed to send email: ${error.text}`);
         }
       )
       .finally(() => {
@@ -46,8 +41,49 @@ function Contact() {
 
   return (
     <div>
-      <ToastContainer />
       <Navbar />
+      {/* Success Popup Modal */}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-lg shadow-xl max-w-md w-full mx-4">
+            <div className="text-center">
+              <svg
+                className="mx-auto h-16 w-16 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <h3 className="mt-4 text-2xl font-bold text-gray-900">
+                Message Received!
+              </h3>
+              <div className="mt-4 text-gray-600">
+                <p>
+                  Your message has been received. A staff member from Visioneers
+                  will respond to you shortly.
+                </p>
+              </div>
+              <div className="mt-8">
+                <button
+                  type="button"
+                  onClick={() => setShowSuccessPopup(false)}
+                  className="px-6 py-2 bg-[#8D0E4E] text-white rounded-lg hover:bg-[#681e43] transition-colors"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Working on Contact Page */}
       <section className="py-16 lg:px-20 px-5">
         <div className="mx-auto text-center pt-20 pb-14">
@@ -118,7 +154,7 @@ function Contact() {
                 disabled={isSending}
                 className="w-full hover:w-9/12 hover:bg-[#681e43] transition-all duration-700 bg-[#8D0E4E] text-white p-3 rounded-lg"
               >
-                Submit
+                {isSending ? "Sending..." : "Submit"}
               </button>
             </div>
           </form>
