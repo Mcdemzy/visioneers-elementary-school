@@ -19,6 +19,7 @@ export default function Admission() {
           <h2 className="mt-6 text-[#333333] flex gap-x-1.5 justify-center items-center font-Inter text-sm md:text-[27px] font-bold leading-[29.05px]">
             Registration Form
           </h2>
+
           <AdmissionForm />
         </div>
       </section>
