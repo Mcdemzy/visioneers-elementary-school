@@ -7,7 +7,7 @@ interface ClassSelectionProps {
 }
 
 export default function ClassSelection({
-  selectedClasses,
+  // selectedClasses,
   onChange,
 }: ClassSelectionProps) {
   const classes = [
