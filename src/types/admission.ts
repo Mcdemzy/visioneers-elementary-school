@@ -1,0 +1,32 @@
+// types/admission.ts
+export interface FormData {
+  fullName: string;
+  gender: string;
+  dob: string;
+  religion: string;
+  fatherName: string;
+  occupation: string;
+  placeOfWork: string;
+  telephone: string;
+  homeAddress: string;
+  mothersName: string;
+  mothersOccupation: string;
+  placeOfWork2: string;
+  totalNumber: string;
+  position: string;
+  previousSchool: string;
+  whoPicks: string;
+  health: string;
+  admitted: string;
+  immunizationA: string;
+  immunizationB: string;
+  immunizationC: string;
+  immunizationD: string;
+  allergies: string;
+  childsHospital: string;
+  doctor: string;
+  docNumber: string;
+  details: string;
+  firstLanguage: string;
+  routine: string;
+}
