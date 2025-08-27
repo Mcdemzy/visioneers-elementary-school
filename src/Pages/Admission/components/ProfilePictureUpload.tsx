@@ -49,11 +49,11 @@ export default function ProfilePictureUpload({
               </div>
             )}
             <input
-              id="dropzone-file"
-              type="file"
-              accept="image/*"
+              // id="dropzone-file"
+              // type="file"
+              // accept="image/*"
               className="hidden"
-              onChange={onImageChange}
+              // onChange={onImageChange}
             />
           </label>
         </div>

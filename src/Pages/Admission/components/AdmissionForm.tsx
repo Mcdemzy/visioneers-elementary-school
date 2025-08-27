@@ -343,8 +343,9 @@ export default function AdmissionForm() {
         />
 
         <button
+          disabled
           type="submit"
-          className="text-white p-2 mb-6 bg-[#8D0E4E] w-full rounded-md text-center"
+          className="text-white p-2 mb-6 bg-gray-200 w-full rounded-md text-center cursor-not-allowed"
         >
           Submit
         </button>

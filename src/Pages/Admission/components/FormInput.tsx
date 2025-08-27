@@ -28,6 +28,7 @@ export default function FormInput({
         {label} {required && <span className="text-[#821528]">*</span>}
       </label>
       <input
+      readOnly={true}
         type={type}
         id={id}
         value={value}
