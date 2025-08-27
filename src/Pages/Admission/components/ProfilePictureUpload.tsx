@@ -8,7 +8,7 @@ interface ProfilePictureUploadProps {
 
 export default function ProfilePictureUpload({
   previewUrl,
-  onImageChange,
+  // onImageChange,
 }: ProfilePictureUploadProps) {
   // Function to handle the download
   const handleDownload = () => {
