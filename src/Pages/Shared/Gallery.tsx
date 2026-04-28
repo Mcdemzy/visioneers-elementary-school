@@ -10,7 +10,6 @@ const Gallery = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set()); // Changed to Set<number>
 
   const categories = [
     "all",
@@ -33,13 +32,16 @@ const Gallery = () => {
     setCurrentPage(1);
   }, [activeCategory]);
 
-  const openModal = useCallback((image: GalleryImage) => {
-    const index = filteredImages.findIndex((img) => img.id === image.id);
-    setCurrentImageIndex(index);
-    setSelectedImage(image);
-    setIsModalOpen(true);
-    document.body.style.overflow = "hidden";
-  }, [filteredImages]);
+  const openModal = useCallback(
+    (image: GalleryImage) => {
+      const index = filteredImages.findIndex((img) => img.id === image.id);
+      setCurrentImageIndex(index);
+      setSelectedImage(image);
+      setIsModalOpen(true);
+      document.body.style.overflow = "hidden";
+    },
+    [filteredImages],
+  );
 
   const closeModal = useCallback(() => {
     setIsModalOpen(false);
@@ -62,11 +64,6 @@ const Gallery = () => {
     setSelectedImage(filteredImages[newIndex]);
   }, [currentImageIndex, filteredImages]);
 
-  // Handle image load
-  const handleImageLoad = (id: number) => { // Changed parameter type to number
-    setLoadedImages(prev => new Set(prev).add(id));
-  };
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!isModalOpen) return;
@@ -82,7 +79,7 @@ const Gallery = () => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isModalOpen, currentImageIndex, filteredImages, closeModal, goToPrevious, goToNext]);
+  }, [isModalOpen, goToPrevious, goToNext, closeModal]);
 
   return (
     <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
@@ -109,29 +106,22 @@ const Gallery = () => {
           {paginatedImages.map((image) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer bg-gray-100"
               onClick={() => openModal(image)}
             >
-              {loadedImages.has(image.id) ? (
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-64 object-cover transition-transform group-hover:scale-105"
-                />
-              ) : (
-                <div className="w-full h-64 bg-gray-200 animate-pulse flex items-center justify-center">
-                  <span className="text-gray-500">Loading...</span>
-                </div>
-              )}
               <img
                 src={image.src}
                 alt={image.alt}
-                className="hidden"
+                className="w-full h-64 object-cover transition-transform group-hover:scale-105"
                 loading="lazy"
-                onLoad={() => handleImageLoad(image.id)}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/images/placeholder.jpg";
+                  target.onerror = null;
+                }}
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all">
+                <span className="text-white opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all font-medium">
                   {image.alt}
                 </span>
               </div>
@@ -140,62 +130,81 @@ const Gallery = () => {
         </div>
 
         {/* Pagination controls */}
-        {filteredImages.length > ITEMS_PER_PAGE && (
+        {totalPages > 1 && (
           <div className="flex justify-center mt-8 gap-4">
             <button
-              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
               disabled={currentPage === 1}
-              className={`px-4 py-2 rounded ${currentPage === 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-primary text-white hover:bg-primary-dark'}`}
+              className={`px-4 py-2 rounded transition-all ${
+                currentPage === 1
+                  ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-primary text-white hover:bg-primary-dark"
+              }`}
             >
               Previous
             </button>
-            <span className="px-4 py-2">
+            <span className="px-4 py-2 bg-white rounded shadow">
               Page {currentPage} of {totalPages}
             </span>
             <button
-              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+              }
               disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded ${currentPage === totalPages ? 'bg-gray-300 cursor-not-allowed' : 'bg-primary text-white hover:bg-primary-dark'}`}
+              className={`px-4 py-2 rounded transition-all ${
+                currentPage === totalPages
+                  ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-primary text-white hover:bg-primary-dark"
+              }`}
             >
               Next
             </button>
           </div>
         )}
 
-        {/* Enhanced Lightbox Modal */}
+        {/* Lightbox Modal */}
         {isModalOpen && selectedImage && (
           <div className="fixed inset-0 z-[5000] flex items-center justify-center bg-black bg-opacity-90 p-4">
             <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-white hover:text-gray-300 text-4xl z-10"
+              aria-label="Close modal"
+            >
+              &times;
+            </button>
+
+            <button
               onClick={goToPrevious}
-              className="absolute left-4 md:left-8 lg:left-12 xl:left-20 text-white hover:text-gray-300 text-4xl md:text-5xl z-10"
+              className="absolute left-4 md:left-8 text-white hover:text-gray-300 text-4xl md:text-5xl z-10"
               aria-label="Previous image"
             >
               &larr;
             </button>
 
             <div className="relative max-w-6xl w-full max-h-[90vh] flex flex-col items-center">
-              <button
-                onClick={closeModal}
-                className="absolute -top-12 right-0 text-white hover:text-gray-300 text-3xl"
-              >
-                &times;
-              </button>
               <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 className="max-w-full max-h-[80vh] object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "/images/placeholder.jpg";
+                  target.onerror = null;
+                }}
               />
               <div className="mt-4 text-center text-white">
-                <p className="text-xl">
-                  {selectedImage.alt} ({currentImageIndex + 1} of{" "}
-                  {filteredImages.length})
+                <p className="text-lg md:text-xl font-medium">
+                  {selectedImage.alt}
+                </p>
+                <p className="text-sm md:text-base text-gray-300 mt-1">
+                  {currentImageIndex + 1} of {filteredImages.length}
                 </p>
               </div>
             </div>
 
             <button
               onClick={goToNext}
-              className="absolute right-4 md:right-8 lg:right-12 xl:right-20 text-white hover:text-gray-300 text-4xl md:text-5xl z-10"
+              className="absolute right-4 md:right-8 text-white hover:text-gray-300 text-4xl md:text-5xl z-10"
               aria-label="Next image"
             >
               &rarr;
